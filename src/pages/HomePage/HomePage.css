@@ -1,0 +1,15 @@
+.home-page {
+  background: #0d0d0d; /* Overall dark theme background */
+  color: #fff; /* General text color */
+}
+
+.code-snippet {
+  background: #1e1e1e; /* Darker background for code blocks */
+  border-radius: 5px;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+.list-group-item.bg-dark {
+  border: none; /* Remove default border for dark list items */
+}

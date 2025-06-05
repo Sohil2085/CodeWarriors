@@ -1,0 +1,61 @@
+/* src/index.css */
+:root {
+  --primary-color: #4A90E2; /* A blue, adjust as needed */
+  --primary-hover-color: #357ABD;
+  --secondary-color: #2A2F3A; /* Darker background elements */
+  --background-color: #1E2128; /* Main dark background */
+  --text-color: #E0E0E0;
+  --text-muted-color: #A0A0A0;
+  --card-bg-color: #2D333B;
+  --border-color: #444;
+  --success-color: #4CAF50;
+  --warning-color: #FFC107;
+  --error-color: #F44336;
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 6px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; 
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Basic responsive utility */
+.grid-cols-1 { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1rem; }
+.grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.grid-cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+
+@media (max-width: 768px) {
+  .grid-cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .grid-cols-3 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  /* Add more specific responsive adjustments for components */
+}
+
+/* Utility for section padding */
+.section-padding {
+  padding: 40px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff; /* Brighter for headings */
+  margin-bottom: 0.8em;
+}
