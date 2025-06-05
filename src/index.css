@@ -1,4 +1,8 @@
 /* src/index.css */
+body,html{
+  margin: 0;
+  padding: 0;
+}
 :root {
   --primary-color: #4A90E2; /* A blue, adjust as needed */
   --primary-hover-color: #357ABD;
@@ -35,7 +39,7 @@ a:hover {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;  
   padding: 20px 0;
 }
 
