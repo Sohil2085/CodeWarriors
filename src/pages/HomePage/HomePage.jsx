@@ -4,10 +4,12 @@ import "./HomePage.css";
 import { useState,useEffect,useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar_Home"
 import Footer from "../../components/Footer/Footer";
-
+// import Person from "../../assets/coding_person.svg"
+import Person from "../../assets/coding.jpg"
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -115,8 +117,8 @@ export default function HomePage() {
           Step into the ultimate coding arena. Solve real-world challenges, track your progress, and become a CodeWarrior!
         </p>
         <div className="mt-4">
-          <a className="btn btn-outline-primary me-3 text-decoration-none">Start Solving</a>
-          <a className="btn btn-outline-primary text-decoration-none">Join CodeWarrior &gt;</a>
+          <Link className="btn btn-outline-primary me-3 text-decoration-none" to={'/problem'}>Start Solving</Link>
+          <Link className="btn btn-outline-primary text-decoration-none" to={'/signup'}>Join CodeWarrior &gt;</Link>
         </div>
       </section>
 
@@ -129,6 +131,7 @@ export default function HomePage() {
 
       {/* What is CodeWarrior */}
       <section className="about custom_what container">
+        <div className="row">
         <div className="what_content col-6">
         <h2 className="text-primary text-start pb-3"><span style={{ color: "#ffffff" }}>What is</span> CodeWarrior?</h2>
         <p className="text-white text-start">
@@ -145,7 +148,8 @@ export default function HomePage() {
         </p>
         </div>
         <div className="what_img col-6">
-          <img src="../../assets/coding_person.svg" alt="" />
+          <img src={Person} alt="" className="rounded"/>
+        </div>
         </div>
       </section>
 

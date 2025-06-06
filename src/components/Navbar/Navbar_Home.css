@@ -1,3 +1,9 @@
 a{
     text-decoration: none;
 }
+/* .navbar_anm{
+    transition: transform 0.3s ease-in-out;
+}
+.navbar_anm.hidden {
+  transform: translateY(-100%);
+} */

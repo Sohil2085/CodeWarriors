@@ -1,0 +1,19 @@
+.custom_class{
+    background: #1c2229;
+}
+.content{
+    padding: 50px; color: white;
+}
+.content p{
+    text-align: start;
+    padding: 10px;
+}
+.content p span{
+    color: #679add;
+}
+.content ul li{
+    padding: 10px;
+}   
+.content ol li{
+    padding: 10px;
+}   
