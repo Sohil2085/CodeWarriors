@@ -8,6 +8,8 @@ import ProblemPage from './pages/ProblemPage/ProblemPage'
 import AboutPage from './pages/AboutPage/AboutPage'
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import LoaderWrapper from "./components/loader/LoaderWrapper";
+import ProblemDetail from "./pages/ProblemPage/ProblemDetail";
+
 
 
 export default function App() {
@@ -18,9 +20,10 @@ export default function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/signup" element={<SignupPage />}/>
-        <Route path="/problem" element={<ProblemPage />}/>
         <Route path="/about" element={<AboutPage />}/>
         <Route path="/profile" element={<ProfilePage />}/>
+        <Route path="/problem" element={<ProblemPage />}/>
+        <Route path="/problem/:id" element={<ProblemDetail />} />
       </Routes>
     </LoaderWrapper>
     </BrowserRouter>

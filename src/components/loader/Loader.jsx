@@ -6,8 +6,8 @@ const Loader = () => {
       className="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 bg-dark"
       style={{ zIndex: 9999 }}
     >
-    <div class="container">
-    <div class="loadingspinner">
+    <div className="container">
+    <div className="loadingspinner">
     <div id="square1"></div>
     <div id="square2"></div>
     <div id="square3"></div>
