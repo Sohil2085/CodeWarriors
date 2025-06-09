@@ -7,10 +7,13 @@ import SignupPage from './pages/SignupPage/SignupPage'
 import ProblemPage from './pages/ProblemPage/ProblemPage'
 import AboutPage from './pages/AboutPage/AboutPage'
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import LoaderWrapper from "./components/loader/LoaderWrapper";
+
 
 export default function App() {
   return (
     <BrowserRouter>
+    <LoaderWrapper>
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/login" element={<LoginPage />}/>
@@ -19,6 +22,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />}/>
         <Route path="/profile" element={<ProfilePage />}/>
       </Routes>
+    </LoaderWrapper>
     </BrowserRouter>
   );
 }
