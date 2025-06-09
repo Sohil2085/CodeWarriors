@@ -132,7 +132,7 @@ export default function HomePage() {
       {/* What is CodeWarrior */}
       <section className="about custom_what container">
         <div className="row">
-        <div className="what_content col-6">
+        <div className="what_content col-lg-6 col-sm-12">
         <h2 className="text-primary text-start pb-3"><span style={{ color: "#ffffff" }}>What is</span> CodeWarrior?</h2>
         <p className="text-white text-start">
           CodeWarrior is a modern coding platform that offers realworld coding challenges, instant feedback, and a community
@@ -147,8 +147,10 @@ export default function HomePage() {
           practice engaging, competitive, and growth-focused.
         </p>
         </div>
-        <div className="what_img col-6">
+        <div className="what_img col-lg-6 col-sm-12">
+          <figure className="picture">
           <img src={Person} alt="" className="rounded"/>
+          </figure>
         </div>
         </div>
       </section>
@@ -157,40 +159,52 @@ export default function HomePage() {
       <section className="features container custom_key">
         <h2 className="fw-bold pb-5">Key Features of Our Coding Platform</h2>
       
-        <Row className="mb-3">
-          <Col className="text-start custom_col rounded p-4 me-3">
+        <div className="row mb-3 gx-5">
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Structured DSA Practice</h3>
             <p>Solve curated problems across Arrays, Strings, DP,
               Trees, and more.</p>
-          </Col>
-          <Col className="text-start custom_col rounded p-4 me-3">
+          </div>
+          </div>
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Real-Time Code Evaluation</h3>
             <p>Instant feedback on submissions with input/output
             and explanation.</p>
-          </Col>
-          <Col className="text-start custom_col rounded p-4 me-3">
+          </div>
+          </div>
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Company-Wise Questions</h3>
             <p>Master top tech interviews with problems asked by
             Google, Amazon, etc.</p>
-          </Col>
-        </Row>
-        <Row className="">
-          <Col className="text-start custom_col rounded p-4 me-3">
+          </div>
+          </div>
+        </div>
+        <div className="row gx-5">
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Profile & Coding Graph</h3>
             <p>Track your daily progress, submission streaks, and
             improvement curve.</p>
-          </Col>
-          <Col className="text-start custom_col rounded p-4 me-3">
+          </div>
+          </div>
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Progress Tracker</h3>
             <p>Visualize your topic-wise coverage and stay on top
             of your learning goals.</p>
-          </Col>
-          <Col className="text-start custom_col rounded p-4 me-3">
+          </div>
+          </div>
+          <div className="col">
+          <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Admin Panel for Problems</h3>
             <p>Easily add, update, and manage problem sets with
             rich metadata.</p>
-          </Col>
-        </Row>
+          </div>
+          </div>
+        </div>
       </section>
 
       {/* <section className="accordion">
