@@ -12,7 +12,7 @@ const LoaderWrapper = ({ children }) => {
 
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 0.8 seconds delay
+    }, 2000); 
 
     return () => clearTimeout(timeout);
   }, [location]);
