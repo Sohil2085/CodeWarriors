@@ -182,7 +182,7 @@ export default function HomePage() {
           </div>
           </div>
         </div>
-        <div className="row gx-5">
+        <div className="row gx-5 pb-5">
           <div className="col">
           <div className="text-start custom_col rounded p-4">
             <h3 className="pb-2">Profile & Coding Graph</h3>
@@ -228,9 +228,9 @@ export default function HomePage() {
 
       </section> */}
 
-      <Footer />
 
     </div>
+      <Footer />
     </>
   );
 }

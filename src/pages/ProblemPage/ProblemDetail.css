@@ -1,0 +1,5 @@
+.custom_container {
+  background-color: #1c2229; /* GitHub dark background */
+  color: #ffffff; /* Light text */
+  min-height: 100vh;
+}

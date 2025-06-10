@@ -4,6 +4,7 @@ import { FunnelFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import TagButtons from "../../components/Tags/TagButton"; // keep using this if it's already Bootstrap styled
 import "./ProblemPage.css";
+import Footer from "../../components/Footer/Footer";
 
 const ProblemPage = () => {
   const questions = [
@@ -122,6 +123,7 @@ const ProblemPage = () => {
 
       </div>
     </div>
+    <Footer />
   </section>
   );
 };

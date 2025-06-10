@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import questions from '../../data/questions';
- 
+
 function ProblemList() {
     return (
+        <>
         <div className="container py-4">
             <h1 className='mb-4'>Problem List</h1>
             <div className="list-group">
@@ -28,6 +29,7 @@ function ProblemList() {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

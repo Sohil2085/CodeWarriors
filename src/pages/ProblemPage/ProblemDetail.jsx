@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import questions from "../../data/questions";
-
+import './ProblemDetail.css'
+import CodeEditor from "../../components/Problem/CodeEditor";
+import ProblemDescription from "../../components/Problem/ProblemDescription";
+import TestRunner from "../../components/Problem/TestRunner";
 
 const ProblemDetail = () => {
   const { id } = useParams();
@@ -14,15 +17,19 @@ const ProblemDetail = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <button className="btn btn-secondary mb-3" onClick={() => navigate(-1)}>
-        ← Back
-      </button>
-      <h2>{question.title}</h2>
-      <p><strong>Difficulty:</strong> {question.difficulty}</p>
-      <p><strong>Tags:</strong> {question.tags.join(", ")}</p>
-      {/* Add more UI like code editor, examples, etc. here */}
+    <>
+    <section className="custom_container">
+    <div className="flex h-screen">
+      <div className="w-1/2 p-4 overflow-y-auto border-r">
+        <ProblemDescription problem={question} />
+      </div>
+      <div className="w-1/2 p-4 flex flex-col">
+        <CodeEditor />
+        <TestRunner />
+      </div>
     </div>
+    </section>
+    </>
   );
 };
 
