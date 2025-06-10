@@ -22,7 +22,7 @@ const ProblemDetail = () => {
     <Navbar />
     <section className="custom_container">
     <div className="row h-screen">
-      <div className="col-5 w-1/2 p-5 overflow-y-auto border-r">
+      <div className="col-5 w-1/2 p-5 overflow-y-auto border-r custom_first">
         <ProblemDescription problem={question} />
       </div>
       <div className="col-7 w-1/2 p-4 flex flex-col">
