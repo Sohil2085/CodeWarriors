@@ -1,8 +1,6 @@
 import React from 'react';
 import './Navbar_Home.css';
-// import { BrowserRouter,Route,Routes,useNavigate } from "react-router-dom";
-// import {Button,Spinner} from 'react-bootstrap';
-// import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -43,8 +41,34 @@ const Navbar_Home = () => {
         {/* Collapsible nav links */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/problem" style={{ color: "#ffffff" }}>Problems</Nav.Link>
-            <Nav.Link as={Link} to="/about" style={{ color: "#ffffff" }}>About</Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/problem"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#ffffff',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
+                borderColor: '#0d6efd',
+              })}
+            >
+              Problems
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/about"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#ffffff',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
+                borderColor: '#0d6efd',
+              })}
+            >
+              About
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
 

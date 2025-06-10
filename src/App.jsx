@@ -9,6 +9,9 @@ import AboutPage from './pages/AboutPage/AboutPage'
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import LoaderWrapper from "./components/loader/LoaderWrapper";
 import ProblemDetail from "./pages/ProblemPage/ProblemDetail";
+import LeaderBoard from "./pages/FooterPage/LeaderBoard";
+import DiscussionForum from "./pages/FooterPage/DiscussionForum";
+import Documentation from "./pages/FooterPage/Documentation";
 
 
 
@@ -24,6 +27,9 @@ export default function App() {
         <Route path="/profile" element={<ProfilePage />}/>
         <Route path="/problem" element={<ProblemPage />}/>
         <Route path="/problem/:id" element={<ProblemDetail />} />
+        <Route path="/leaderboard" element={<LeaderBoard />}/>
+        <Route path="/dscussionforum" element={<DiscussionForum />}/>
+        <Route path="/documentation" element={<Documentation />}/>
       </Routes>
     </LoaderWrapper>
     </BrowserRouter>

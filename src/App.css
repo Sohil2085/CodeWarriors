@@ -1,0 +1,12 @@
+:root {
+  --bg: #0d0d0d;
+  --primary: #00fff7;
+  --secondary: #ff00ff;
+  --glass: rgba(255, 255, 255, 0.1);
+  --blur: blur(10px);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--primary);
+}

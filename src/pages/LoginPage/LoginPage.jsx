@@ -5,7 +5,22 @@ import { Eye, Mail, User,EyeOff, Lock} from "lucide-react";
 import CodeBackground from '../../components/image/image';
 import "./LoginPage.css";
 
+import AOS from "aos";
+import 'aos/dist/aos.css';
+
+
 const LoginPage = () => {
+
+  useEffect(() => {
+         AOS.init({
+         // Global settings
+         duration: 700, // Animation duration
+           easing: 'ease-out-cubic', // Animation easing
+           once: true, // Only animate once
+           disable: 'phone', // Disable on phone
+         });
+       }, []);
+
   const { user, isAuthenticated, login } = useAuthStore();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -31,13 +46,13 @@ const LoginPage = () => {
     <div className="d-flex align-items-center justify-content-center min-vh-100 bg-dark text-light">
       <div className="container p-4 rounded shadow-lg bg-dark d-flex flex-column flex-md-row">
         {/* Login Form */}
-        <div className="flex-fill p-4">
+        <div className="flex-fill p-4" data-aos="fade-up-right">
           <div className="text-center mb-4">
-            <div className="mb-2">
+            <div className="mb-2" data-aos="fade-up">
               <User size={32} strokeWidth={1.5} />
             </div>
-            <h2>Welcome Back</h2>
-            <p>Sign in to your account</p>
+            <h2 data-aos="fade-up">Welcome Back</h2>
+            <p data-aos="fade-up">Sign in to your account</p>
           </div>
           <form onSubmit={handleLogin}>
             
@@ -88,12 +103,14 @@ const LoginPage = () => {
         </div>
 
         {/* Right Side - Code Snippet */}
+        <div data-aos="fade-up-left">
         <CodeBackground
         title={"Welcome to our platform!"}
         subtitle={
           "Sign in to access our platform and start using our services."
         }
-      />
+        />
+        </div>
       </div>
     </div>
   );

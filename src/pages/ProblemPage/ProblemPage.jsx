@@ -1,12 +1,27 @@
-import React, { useState } from "react";
-import { Form, FormControl, Button, InputGroup, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Form, FormControl, Button, InputGroup, Container, Navbar } from "react-bootstrap";
 import { FunnelFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import TagButtons from "../../components/Tags/TagButton"; // keep using this if it's already Bootstrap styled
 import "./ProblemPage.css";
 import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/Navbar/Navbar_Home"
+
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 const ProblemPage = () => {
+  
+  useEffect(() => {
+         AOS.init({
+         // Global settings
+         duration: 700, // Animation duration
+           easing: 'ease-out-cubic', // Animation easing
+           once: true, // Only animate once
+           disable: 'phone', // Disable on phone
+         });
+       }, []);
+  
   const questions = [
     { id: 1, title: "Two Sum", tags: ["array", "hash-table"], difficulty: "Easy" },
     { id: 2, title: "Longest Substring Without Repeating Characters", tags: ["string", "sliding-window"], difficulty: "Medium" },
@@ -56,18 +71,20 @@ const ProblemPage = () => {
     .filter((q) => q.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
+    <>
+    <NavBar />
     <section className="custom_container">
     <div className="container py-4">
       <div className="text-center mb-4">
-        <h1 className="fw-bold">Interview Problem Set</h1>
-        <p className="text-muted">Curated problems across categories for interviews and challenges.</p>
+        <h1 className="fw-bold" data-aos="fade-right">Interview Problem Set</h1>
+        <p className="text-muted" data-aos="fade-up">Curated problems across categories for interviews and challenges.</p>
       </div>
 
-      <div className="mb-3">
+      <div className="mb-3" data-aos="flip-up">
         <TagButtons tags={tags} onClick={handleTagClick} />
       </div>
 
-      <Form className="mb-4">
+      <Form className="mb-4" data-aos="fade-up">
         <InputGroup>
           <FormControl
             placeholder="Search questions"
@@ -80,12 +97,12 @@ const ProblemPage = () => {
         </InputGroup>
       </Form>
 
-      <div className="list-group">
+      <div className="list-group" >
         {filteredQuestions.length > 0 ? (
           filteredQuestions.map((q) => (
             <div
               key={q.id}
-              className="question-item d-flex justify-content-between align-items-center"
+              className="question-item d-flex justify-content-between align-items-center" data-aos="fade-up"
             >
               <div className="d-flex align-items-center">
                 {favorites.includes(q.id) && (
@@ -125,6 +142,7 @@ const ProblemPage = () => {
     </div>
     <Footer />
   </section>
+  </>
   );
 };
 

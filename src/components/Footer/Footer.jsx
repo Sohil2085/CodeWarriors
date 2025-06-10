@@ -1,5 +1,7 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-router-dom'
+
 
 const Footer = () => {
   return (
@@ -24,30 +26,30 @@ const Footer = () => {
         <div className="col-md-3 mb-4 mb-md-0 text-start">
             <h6 className="fw-bold">Platform</h6>
             <ul className="list-unstyled small">
-            <li><a href="#" className="text-light text-decoration-none">Challenges</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Leaderboard</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Discussion Forum</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Documentation</a></li>
+            <li><Link to={"/problem"} className="text-light text-decoration-none">Challenges</Link></li>
+            <li><Link to={"/leaderborad"} className="text-light text-decoration-none">Leaderboard</Link></li>
+            <li><Link to={"/discussionforum"} className="text-light text-decoration-none">Discussion Forum</Link></li>
+            <li><Link to={"/documentation"} className="text-light text-decoration-none">Documentation</Link></li>
             </ul>
         </div>
 
         <div className="col-md-3 mb-4 mb-md-0 text-start">
             <h6 className="fw-bold">Resources</h6>
             <ul className="list-unstyled small">
-            <li><a href="#" className="text-light text-decoration-none">Blog</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Tutorials</a></li>
-            <li><a href="#" className="text-light text-decoration-none">API</a></li>
-            <li><a href="#" className="text-light text-decoration-none">FAQ</a></li>
+            <li><Link href="#" className="text-light text-decoration-none">Blog</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">Tutorials</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">API</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">FAQ</Link></li>
             </ul>
         </div>
 
         <div className="col-md-3 mb-4 mb-md-0 text-start">
             <h6 className="fw-bold">Company</h6>
             <ul className="list-unstyled small">
-            <li><a href="#" className="text-light text-decoration-none">About</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Careers</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Contact</a></li>
-            <li><a href="#" className="text-light text-decoration-none">Legal</a></li>
+            <li><Link href="#" className="text-light text-decoration-none">About</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">Careers</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">Contact</Link></li>
+            <li><Link href="#" className="text-light text-decoration-none">Legal</Link></li>
             </ul>
         </div>
         </div>
@@ -57,9 +59,9 @@ const Footer = () => {
         <div className="d-flex flex-column flex-md-row justify-content-between small">
         <div>© 2025 Code Warriors. All rights reserved.</div>
         <div>
-            <a href="#" className="text-light text-decoration-none me-3">Privacy Policy</a>
-            <a href="#" className="text-light text-decoration-none me-3">Terms of Service</a>
-            <a href="#" className="text-light text-decoration-none">Cookie Policy</a>
+            <Link href="#" className="text-light text-decoration-none me-3">Privacy Policy</Link>
+            <Link href="#" className="text-light text-decoration-none me-3">Terms of Service</Link>
+            <Link href="#" className="text-light text-decoration-none">Cookie Policy</Link>
         </div>
         </div>
     </div>

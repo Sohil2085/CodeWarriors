@@ -1,18 +1,25 @@
 import React from "react";
 import "./HomePage.css";
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 import { useState,useEffect,useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar_Home"
 import Footer from "../../components/Footer/Footer";
-// import Person from "../../assets/coding_person.svg"
 import Person from "../../assets/coding.jpg"
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
-
+  useEffect(() => {
+         AOS.init({
+         // Global settings
+         duration: 700, // Animation duration
+           easing: 'ease-out-cubic', // Animation easing
+           once: true, // Only animate once
+           disable: 'phone', // Disable on phone
+         });
+       }, []);
 
   const [displayedCode, setDisplayedCode] = useState('');
   const codeString = `
@@ -47,7 +54,7 @@ export default function HomePage() {
         return () => clearInterval(typingInterval);
       }, []);
   
-
+        // <div>
       // accordion
     //   const faqs = [
     //     {
@@ -104,7 +111,8 @@ export default function HomePage() {
     //       } else {
     //           setActive(index);
     //       }
-    //   } 
+    //   }
+        // </div> 
 
   return (
     <>
@@ -112,18 +120,19 @@ export default function HomePage() {
     <div className="home-page container-fluid text-center">
       {/* Hero Section */}
       <section className="hero hero_section container">
-        <h1 className="text-primary display-4 fw-bold">Code. Compete. Conquer.</h1>
-        <p className="lead text-secondary hero_section_p">
+        <h1 className="text-primary display-4 fw-bold" data-aos="fade-up">Code. Compete. Conquer.</h1>
+        <p className="lead text-secondary hero_section_p" data-aos="fade-up">
           Step into the ultimate coding arena. Solve real-world challenges, track your progress, and become a CodeWarrior!
         </p>
-        <div className="mt-4">
-          <Link className="btn btn-outline-primary me-3 text-decoration-none" to={'/problem'}>Start Solving</Link>
-          <Link className="btn btn-outline-primary text-decoration-none" to={'/signup'}>Join CodeWarrior &gt;</Link>
+        <div className="mt-5 mb-5" data-aos="fade-up">
+
+          <Link className="me-3 text-decoration-none glow-button" to={'/problem'}>Start Solving</Link>
+          <Link className="me-3 text-decoration-none glow-button" to={'/signup'}>Join CodeWarrior &gt;</Link>
         </div>
       </section>
 
       {/* Code Snippet */}
-      <section className="code-snippet container my-4 p-3 bg-dark text-start rounded">
+      <section className="code-snippet container my-4 p-3 bg-dark text-start rounded" data-aos="fade-up-right">
         <pre className="prism-code">
           {displayedCode}
         </pre>
@@ -132,7 +141,7 @@ export default function HomePage() {
       {/* What is CodeWarrior */}
       <section className="about custom_what container">
         <div className="row">
-        <div className="what_content col-lg-6 col-sm-12">
+        <div className="what_content col-lg-6 col-sm-12" data-aos="fade-right">
         <h2 className="text-primary text-start pb-3"><span style={{ color: "#ffffff" }}>What is</span> CodeWarrior?</h2>
         <p className="text-white text-start">
           CodeWarrior is a modern coding platform that offers realworld coding challenges, instant feedback, and a community
@@ -147,7 +156,7 @@ export default function HomePage() {
           practice engaging, competitive, and growth-focused.
         </p>
         </div>
-        <div className="what_img col-lg-6 col-sm-12">
+        <div className="what_img col-lg-6 col-sm-12" data-aos="fade-left">
           <figure className="picture">
           <img src={Person} alt="" className="rounded"/>
           </figure>
@@ -157,25 +166,25 @@ export default function HomePage() {
 
       {/* Key Features */}
       <section className="features container custom_key">
-        <h2 className="fw-bold pb-5">Key Features of Our Coding Platform</h2>
+        <h2 className="fw-bold pb-5" data-aos="fade-up">Key Features of Our Coding Platform</h2>
       
         <div className="row mb-3 gx-5">
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Structured DSA Practice</h3>
             <p>Solve curated problems across Arrays, Strings, DP,
               Trees, and more.</p>
           </div>
           </div>
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Real-Time Code Evaluation</h3>
             <p>Instant feedback on submissions with input/output
             and explanation.</p>
           </div>
           </div>
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Company-Wise Questions</h3>
             <p>Master top tech interviews with problems asked by
             Google, Amazon, etc.</p>
@@ -183,22 +192,22 @@ export default function HomePage() {
           </div>
         </div>
         <div className="row gx-5 pb-5">
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Profile & Coding Graph</h3>
             <p>Track your daily progress, submission streaks, and
             improvement curve.</p>
           </div>
           </div>
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Progress Tracker</h3>
             <p>Visualize your topic-wise coverage and stay on top
             of your learning goals.</p>
           </div>
           </div>
-          <div className="col">
-          <div className="text-start custom_col rounded p-4">
+          <div className="col" data-aos="flip-up">
+          <div className="text-start custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Admin Panel for Problems</h3>
             <p>Easily add, update, and manage problem sets with
             rich metadata.</p>
