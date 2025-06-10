@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6,p,a{
   margin: 0;
 }
 .custom_container {
-  background-color: #212529;
+  /* background-color: #212529; */
   min-height: 100vh;
   color: #fff;
 }

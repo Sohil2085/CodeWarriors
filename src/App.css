@@ -6,7 +6,10 @@
   --blur: blur(10px);
 }
 
-body {
+body, #root,.app {
   background-color: var(--bg);
   color: var(--primary);
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 0;
 }

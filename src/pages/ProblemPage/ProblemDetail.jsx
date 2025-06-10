@@ -5,6 +5,7 @@ import './ProblemDetail.css'
 import CodeEditor from "../../components/Problem/CodeEditor";
 import ProblemDescription from "../../components/Problem/ProblemDescription";
 import TestRunner from "../../components/Problem/TestRunner";
+import Navbar from "../../components/Navbar/Navbar_Home";
 
 const ProblemDetail = () => {
   const { id } = useParams();
@@ -18,12 +19,13 @@ const ProblemDetail = () => {
 
   return (
     <>
+    <Navbar />
     <section className="custom_container">
-    <div className="flex h-screen">
-      <div className="w-1/2 p-4 overflow-y-auto border-r">
+    <div className="row h-screen">
+      <div className="col-5 w-1/2 p-5 overflow-y-auto border-r">
         <ProblemDescription problem={question} />
       </div>
-      <div className="w-1/2 p-4 flex flex-col">
+      <div className="col-7 w-1/2 p-4 flex flex-col">
         <CodeEditor />
         <TestRunner />
       </div>
