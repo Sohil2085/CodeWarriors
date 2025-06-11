@@ -20,7 +20,7 @@ const TestRunner = () => {
   };
 
   return (
-    <div className="container my-4">
+    <div className="container my-4" data-aos="fade-up">
       <button
         className="btn btn-success"
         onClick={handleRunCode}

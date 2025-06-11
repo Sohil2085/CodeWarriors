@@ -10,6 +10,7 @@ import { Doughnut, Pie } from 'react-chartjs-2'
 import { Chart,ArcElement, Tooltip } from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import questionsData from '../../data/questionsData.json'
+import { color } from 'framer-motion'
 
 
 Chart.register(ArcElement, ChartDataLabels, Tooltip)
@@ -84,7 +85,7 @@ const ProfilePage = () => {
   responsive: true,
   maintainAspectRatio: false,
 
-  hoverOffset: 10, // Makes slices pop out slightly on hover
+  hoverOffset: 20, // Makes slices pop out slightly on hover
   interaction: {
     mode: 'nearest',
     intersect: true
@@ -122,7 +123,7 @@ const ProfilePage = () => {
               <span>Rank : 000001</span>
             </p>
             </div>
-            <div className="edit_profile" data-aos="fade-up">
+            <div className="edit_profile pt-1" data-aos="fade-up">
               <button className='btn btn-outline-primary w-100'>Edit Profile</button>
             </div>
             <hr />
@@ -134,10 +135,28 @@ const ProfilePage = () => {
               <button className="btn btn-outline-secondary me-2 mt-2">C++</button>
             </div>
           </div>
-          <div className="col-8">
+          <div className="col-8 ">
             <div className="row">
-              <div className="col p-3" style={{height : '300px'}}>
+              <div className="d-flex  col p-4 rounded ms-4" style={{background : '#292929'}}>
+              <div className='' style={{ overflow : 'visible'}}>
               <Doughnut data={chartData} options={options} plugins={[ChartDataLabels, centerTextPlugin]} />
+              </div>
+              <div className="info">
+                <ul className='d-flex flex-column gap-2'>
+                  <li className='rounded pt-1 pb-1 ps-4 pe-4' style={{background : '#363636', color : '#1cbaba'}} data-aos = 'fade-up'>
+                    Easy<br></br>
+                    <small>50/880</small>
+                  </li>
+                  <li className='rounded pt-1 pb-1 ps-4 pe-4' style={{background : '#363636', color : '#ffb700'}} data-aos = 'fade-up'>
+                    Medium<br></br>
+                    <small>75/1858</small>
+                  </li>
+                  <li className='rounded pt-1 pb-1 ps-4 pe-4' style={{background : '#363636', color : '#f53636'}} data-aos = 'fade-up'>
+                    Hard<br></br>
+                    <small>25/842</small>
+                  </li>
+                </ul>
+              </div>
               </div>
               <div className="col"></div>
             </div>

@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar_Home.css';
-import { NavLink } from 'react-router-dom';
+
+import { useNavigate, NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import useAuthStore from '../../stores/useAuthStore';
+import Dropdown  from 'react-bootstrap/Dropdown';
 
 
 const Navbar_Home = () => {
     // const {logout, isAuthenticated} = useAuthStore()
     const logout = useAuthStore((state) => state.logout);
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+      logout()
+      window.location.reload()
+    }
 
 
 
@@ -26,6 +34,12 @@ const Navbar_Home = () => {
   //       }, 2000); // 2-second delay to show the loader
   // };
 
+  const [avatar, setAvatar] = useState('')
+
+  useEffect(() => {
+  const randomSeed = Math.random().toString(36).substring(7);
+  setAvatar(`https://api.dicebear.com/8.x/avataaars/svg?seed=${randomSeed}`);
+  }, []);
 
   return (
     <Navbar expand="lg" className="navbar_anm bg-dark sticky-top">
@@ -77,16 +91,27 @@ const Navbar_Home = () => {
         {/* <img src="../../assets/streak.svg" alt="" /> */}
         <div className="d-flex">
           {isAuthenticated ? (
-            <Link
-              to="/"
-              className="btn btn-outline-primary text-decoration-none ms-auto"
-              onClick={(e) => {
-                e.preventDefault();
-                logout();
-              }}
-            >
-              Logout
-            </Link>
+            <Dropdown align="end">
+              <Dropdown.Toggle variant="dark" id="dropdown-basic" className="profile-toggle border-0 bg-transparent p-0">
+                <img
+                  src={avatar}
+                  alt="profile"
+                  className="rounded-circle border border-info shadow"
+                  width={45}  
+                  height={45}
+                  style={{ objectFit: 'cover' }}
+                />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="dropdown-menu-custom mt-2">
+                <Dropdown.Item as={Link} to="/profile"> Profile</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/problem">Problem</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item as="button" className="text-danger" onClick={handleLogout}>
+                   Logout
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           ) : (
             <Link
               to="/login"

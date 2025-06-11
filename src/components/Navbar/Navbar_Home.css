@@ -1,6 +1,37 @@
 a{
     text-decoration: none;
 }
+.dropdown-menu-custom {
+  background: rgba(15, 15, 30, 0.95);
+  border: 1px solid #00fff7;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 247, 0.4);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 0.5rem;
+}
+
+.dropdown-menu-custom .dropdown-item {
+  color: #2d4d4b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dropdown-menu-custom .dropdown-item:hover {
+  background: rgba(10, 112, 112, 0.15);
+  transform: scale(1.05);
+  color: #1f1e1e;
+}
+
+.profile-toggle img {
+  transition: transform 0.3s ease;
+}
+
+.profile-toggle:hover img {
+  transform: scale(1.05);
+}
+
 /* .navbar_anm{
     transition: transform 0.3s ease-in-out;
 }

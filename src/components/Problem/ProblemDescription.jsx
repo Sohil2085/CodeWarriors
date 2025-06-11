@@ -17,7 +17,7 @@ const ProblemDescription = ({ problem }) => {
 
   return (
     
-    <div className="container">
+    <div className="container" data-aos="fade-up">
       <h2>{problem.title}</h2>
       {diff}
 
