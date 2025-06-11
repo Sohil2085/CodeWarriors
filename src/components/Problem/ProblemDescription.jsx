@@ -3,11 +3,23 @@
 const ProblemDescription = ({ problem }) => {
   if (!problem) return <p>Loading...</p>;
 
+  let diff;
+  if(problem.difficulty === 'Easy'){
+      diff = <p className="text-success">{problem.difficulty}</p>
+  }
+  else if(problem.difficulty === 'Medium'){
+      diff = <p className="text-warning">{problem.difficulty}</p>
+  }
+  else {
+      diff = <p className="text-danger">{problem.difficulty}</p>
+  }
+
+
   return (
     
     <div className="container">
       <h2>{problem.title}</h2>
-      <p className="text-muted">{problem.difficulty}</p>
+      {diff}
 
       {/* Tags */}
       <div className="mb-3">

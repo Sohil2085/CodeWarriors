@@ -1,0 +1,14 @@
+[
+    {
+        "label" : "Easy",
+        "value" : 50
+    },
+    {
+        "label" : "Medium",
+        "value" : 75
+    },
+    {
+        "label" : "Hard",
+        "value" : 25
+    }
+]
