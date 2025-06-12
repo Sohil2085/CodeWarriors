@@ -15,6 +15,7 @@ import Documentation from "./pages/FooterPage/Documentation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import CursorFollower from "./components/cursor/CursorFollower";
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <>
+      <CursorFollower />
       <ToastContainer 
       position="top-center"
       autoClose={3000}

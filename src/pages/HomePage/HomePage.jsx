@@ -131,6 +131,7 @@ export default function HomePage() {
   return (
     <>
     <Navbar />
+    
     <div className="home-page container-fluid text-center">
       {/* Hero Section */}
       <section className="hero hero_section container">
@@ -233,7 +234,7 @@ export default function HomePage() {
             <h3 className="pb-2">Admin Panel for Problems</h3>
             <p>Easily add, update, and manage problem sets with
             rich metadata.</p>
-          </div>
+          </div>  
           </div>
         </div>
       </section>
