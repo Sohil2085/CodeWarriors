@@ -7,10 +7,24 @@ import { useState,useEffect,useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar_Home"
 import Footer from "../../components/Footer/Footer";
 import Person from "../../assets/coding.jpg"
-
-import { Link } from "react-router-dom";
+import useAuthStore from "../../stores/useAuthStore";
+import { Link, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function HomePage() {
+
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
+  // const location = useLocation()
+
+  // useEffect(() => {
+  //   const fromLogin = location.state?.fromLogin
+  //   if (fromLogin) {
+  //     toast.success("Logged in successfully!");
+  //     window.history.replaceState({}, document.title);
+  //     console.log("Location state on HomePage:", location.state);
+  //   }
+  // }, [location.state?.fromLogin]);
+
   useEffect(() => {
          AOS.init({
          // Global settings
@@ -125,9 +139,17 @@ export default function HomePage() {
           Step into the ultimate coding arena. Solve real-world challenges, track your progress, and become a CodeWarrior!
         </p>
         <div className="mt-5 mb-5" data-aos="fade-up">
-
+          {isAuthenticated ? (
+          <>
           <Link className="me-3 text-decoration-none glow-button" to={'/problem'}>Start Solving</Link>
           <Link className="me-3 text-decoration-none glow-button" to={'/signup'}>Join CodeWarrior &gt;</Link>
+          </>
+          ) : (
+          <>
+          <Link className="me-3 text-decoration-none glow-button" to={'/login'}>Start Solving</Link>
+          <Link className="me-3 text-decoration-none glow-button" to={'/signup'}>Join CodeWarrior &gt;</Link>
+          </>
+          )}
         </div>
       </section>
 

@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthStore from "../../stores/useAuthStore";
 import { Eye, Mail, User,EyeOff, Lock} from "lucide-react";
 import CodeBackground from '../../components/image/image';
 import "./LoginPage.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
 
+
 const LoginPage = () => {
+
+  // const location = useLocation()
 
   useEffect(() => {
          AOS.init({
@@ -31,18 +36,39 @@ const LoginPage = () => {
   console.log("User:", user);
   console.log("isAuthenticated:", isAuthenticated);
 
+
+  // useEffect(() => {
+  //   const fromLogout = location.state?.fromLogout
+
+  //   if(fromLogout){
+  //     toast.success("Logout Successfully..")
+  //     window.history.replaceState({},document.title)
+  //   }
+  // },[location.state?.fromLogout])
+
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/");
+      // navigate("/", { state: { fromLogin: true } })
+      navigate("/")
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated]);
 
   const handleLogin = (e) => {
-    e.preventDefault();
-    login(username, email, password);
+    try {
+      e.preventDefault();
+      login(username, email, password);
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
+    <>
+    <div className="home container-fluid text-end p-4" style={{background : '#212529'}}>
+      <div className="container">
+        <Link to={'/'} className="me-3 text-decoration-none glow_button">Home</Link>
+      </div>
+    </div>
     <div className="d-flex align-items-center justify-content-center min-vh-100 bg-dark text-light">
       <div className="container p-4 rounded shadow-lg bg-dark d-flex flex-column flex-md-row">
         {/* Login Form */}
@@ -93,7 +119,7 @@ const LoginPage = () => {
               </span>
             </div>
           </div>
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-primary w-100" >
               Sign in
             </button>
           </form>
@@ -113,6 +139,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

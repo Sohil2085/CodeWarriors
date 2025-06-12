@@ -8,6 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import useAuthStore from '../../stores/useAuthStore';
 import Dropdown  from 'react-bootstrap/Dropdown';
+import { toast } from 'react-toastify';
 
 
 const Navbar_Home = () => {
@@ -16,10 +17,28 @@ const Navbar_Home = () => {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
     const navigate = useNavigate()
 
+    // useEffect(() => {
+    //   if(!isAuthenticated){
+    //     navigate("/login")
+    //   }
+    // },[!isAuthenticated])
+
     const handleLogout = () => {
-      logout()
-      window.location.reload()
+      try{
+        logout()
+        window.location.reload()
+      }
+      catch(error){
+        console.log(error)
+      }
     }
+
+    // useEffect(() => {
+    //     if (!isAuthenticated) {
+    //       navigate("/login", { state: { fromLogout: true } })
+    //     }
+    //   }, [!isAuthenticated]);
+
 
 
 
@@ -107,7 +126,7 @@ const Navbar_Home = () => {
                 <Dropdown.Item as={Link} to="/profile"> Profile</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/problem">Problem</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item as="button" className="text-danger" onClick={handleLogout}>
+                <Dropdown.Item as={Link} to="/login" className="text-danger" onClick={handleLogout}>
                    Logout
                 </Dropdown.Item>
               </Dropdown.Menu>

@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
 import { use } from "react";
+import { toast } from "react-toastify";
 import { create } from "zustand";
 
 const DUMMY_USER = {
@@ -20,9 +21,10 @@ const useAuthStore = create((set) => ({
         user: { name: username, email: email },
         isAuthenticated: true,
       });
+      toast.success("Logged in successfully!")  
       console.log('Login successful!');
     } else {
-      alert('Invalid credentials! Only dummy user can login.');
+      toast.warning("Login failed!")
       console.log('Login failed!');
     }
     },
@@ -34,6 +36,8 @@ const useAuthStore = create((set) => ({
       isAuthenticated: true,
       password : password
     });
+    
+    toast.success("Signed up successfully!")
     console.log('Signup successful!');
     },
 
@@ -43,6 +47,7 @@ const useAuthStore = create((set) => ({
             user : null,
             isAuthanticated : false,
         })
+        toast.success("Logged out successfully!")
         console.log('Logout Successfull!')
     }
 

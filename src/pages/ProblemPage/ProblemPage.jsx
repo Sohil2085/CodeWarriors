@@ -75,9 +75,9 @@ const ProblemPage = () => {
     <NavBar />
     <section className="custom_container">
     <div className="container py-4">
-      <div className="text-center mb-4">
+      <div className="text-start mb-4">
         <h1 className="fw-bold" data-aos="fade-right">Interview Problem Set</h1>
-        <p className="text-muted" data-aos="fade-up">Curated problems across categories for interviews and challenges.</p>
+        <p className="" data-aos="fade-up">Curated problems across categories for interviews and challenges.</p>
       </div>
 
       <div className="mb-3" data-aos="flip-up">

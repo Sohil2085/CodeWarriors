@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+
 import { BrowserRouter,Route,Routes,Navigate } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage'
@@ -12,11 +12,29 @@ import ProblemDetail from "./pages/ProblemPage/ProblemDetail";
 import LeaderBoard from "./pages/FooterPage/LeaderBoard";
 import DiscussionForum from "./pages/FooterPage/DiscussionForum";
 import Documentation from "./pages/FooterPage/Documentation";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 
 export default function App() {
+
+  
+
   return (
+    <>
+      <ToastContainer 
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+       />
     <BrowserRouter>
     <LoaderWrapper>
       <Routes>
@@ -33,5 +51,6 @@ export default function App() {
       </Routes>
     </LoaderWrapper>
     </BrowserRouter>
+  </>
   );
 }

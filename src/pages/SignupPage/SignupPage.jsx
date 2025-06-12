@@ -7,6 +7,7 @@ import "./SignupPage.css";
 
 import AOS from "aos";
 import 'aos/dist/aos.css';
+import { toast } from "react-toastify";
 
 const SignupPage = () => {
 
@@ -37,8 +38,12 @@ const SignupPage = () => {
   }, [isAuthenticated, navigate]);
 
   const handleSignup = (e) => {
-    e.preventDefault();
-    signup(username, email, password);
+    try {
+      e.preventDefault();
+      signup(username, email, password);
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
