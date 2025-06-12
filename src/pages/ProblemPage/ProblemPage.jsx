@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Form, FormControl, Button, InputGroup, Container, Navbar } from "react-bootstrap";
-import { FunnelFill } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import TagButtons from "../../components/Tags/TagButton"; // keep using this if it's already Bootstrap styled
 import "./ProblemPage.css";
@@ -9,6 +8,7 @@ import NavBar from "../../components/Navbar/Navbar_Home"
 
 import AOS from "aos";
 import 'aos/dist/aos.css';
+import { Book, Bookmark } from "react-bootstrap-icons";
 
 const ProblemPage = () => {
   
@@ -92,7 +92,10 @@ const ProblemPage = () => {
             onChange={handleSearchChange}
           />
           <Button variant="outline-secondary">
-            <FunnelFill className="me-1" /> Filter
+            <Bookmark /> Bookmarks
+          </Button>
+          <Button variant="outline-secondary">
+            <Book /> Notes
           </Button>
         </InputGroup>
       </Form>
