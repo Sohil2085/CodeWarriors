@@ -32,8 +32,6 @@
     "react-particles": "^2.12.2",
     "react-router-dom": "^7.6.2",
     "react-toastify": "^11.0.5",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^3.8.1",
     "zod": "^3.25.53",
     "zustand": "^5.0.5"
   },
