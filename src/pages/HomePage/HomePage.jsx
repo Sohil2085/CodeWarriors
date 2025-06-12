@@ -190,46 +190,46 @@ export default function HomePage() {
       <section className="features container custom_key">
         <h2 className="fw-bold pb-5" data-aos="fade-up">Key Features of Our Coding Platform</h2>
       
-        <div className="row mb-3 gx-5">
+        <div className="d-flex align-item-stretch row mb-3 gx-5">
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Structured DSA Practice</h3>
             <p>Solve curated problems across Arrays, Strings, DP,
               Trees, and more.</p>
           </div>
           </div>
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Real-Time Code Evaluation</h3>
             <p>Instant feedback on submissions with input/output
             and explanation.</p>
           </div>
           </div>
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Company-Wise Questions</h3>
             <p>Master top tech interviews with problems asked by
             Google, Amazon, etc.</p>
           </div>
           </div>
         </div>
-        <div className="row gx-5 pb-5">
+        <div className="row gx-5 pb-5 d-flex align-item-stretch ">
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Profile & Coding Graph</h3>
             <p>Track your daily progress, submission streaks, and
             improvement curve.</p>
           </div>
           </div>
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Progress Tracker</h3>
             <p>Visualize your topic-wise coverage and stay on top
             of your learning goals.</p>
           </div>
           </div>
           <div className="col" data-aos="flip-up">
-          <div className="text-start custom_col rounded p-4 glass-card">
+          <div className="text-start h-100 custom_col rounded p-4 glass-card">
             <h3 className="pb-2">Admin Panel for Problems</h3>
             <p>Easily add, update, and manage problem sets with
             rich metadata.</p>
