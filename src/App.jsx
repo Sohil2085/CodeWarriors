@@ -15,7 +15,7 @@ import Documentation from "./pages/FooterPage/Documentation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import CursorFollower from "./components/cursor/CursorFollower";
+import CursorFollower from "./components/Cursor/CursorFollower";
 
 
 export default function App() {
