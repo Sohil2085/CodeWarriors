@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Children } from "react";
 
-import { BrowserRouter,Route,Routes,Navigate } from "react-router-dom";
+import { BrowserRouter,Route,Routes,Navigate, createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import SignupPage from './pages/SignupPage/SignupPage'
@@ -12,6 +12,13 @@ import ProblemDetail from "./pages/ProblemPage/ProblemDetail";
 import LeaderBoard from "./pages/FooterPage/LeaderBoard";
 import DiscussionForum from "./pages/FooterPage/DiscussionForum";
 import Documentation from "./pages/FooterPage/Documentation";
+import LearnPage from "./pages/Learn/LearnPage";
+import InfoPage from "./pages/Info/infoPage";
+import Intro from "./pages/Info/intro";
+import Loops from "./pages/Info/loops";
+
+
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -20,7 +27,6 @@ import CursorFollower from "./components/Cursor/CursorFollower";
 
 export default function App() {
 
-  
 
   return (
     <>
@@ -38,20 +44,26 @@ export default function App() {
       theme="dark"
        />
     <BrowserRouter>
-    <LoaderWrapper>
       <Routes>
-        <Route path="/" element={<HomePage />}/>
-        <Route path="/login" element={<LoginPage />}/>
-        <Route path="/signup" element={<SignupPage />}/>
-        <Route path="/about" element={<AboutPage />}/>
-        <Route path="/profile" element={<ProfilePage />}/>
-        <Route path="/problem" element={<ProblemPage />}/>
-        <Route path="/problem/:id" element={<ProblemDetail />} />
-        <Route path="/leaderboard" element={<LeaderBoard />}/>
-        <Route path="/dscussionforum" element={<DiscussionForum />}/>
-        <Route path="/documentation" element={<Documentation />}/>
+        <Route path="/" element={<LoaderWrapper><HomePage /></LoaderWrapper>}/>
+        <Route path="/login" element={<LoaderWrapper><LoginPage /></LoaderWrapper>}/>
+        <Route path="/signup" element={<LoaderWrapper><SignupPage /></LoaderWrapper>}/>
+        <Route path="/about" element={<LoaderWrapper><AboutPage /></LoaderWrapper>}/>
+        <Route path="/profile" element={<LoaderWrapper><ProfilePage /></LoaderWrapper>}/>
+        <Route path="/problem" element={<LoaderWrapper><ProblemPage /></LoaderWrapper>}/>
+        <Route path="/problem/:id" element={<LoaderWrapper><ProblemDetail /></LoaderWrapper>} />
+        <Route path="/leaderboard" element={<LoaderWrapper><LeaderBoard /></LoaderWrapper>}/>
+        <Route path="/dscussionforum" element={<LoaderWrapper><DiscussionForum /></LoaderWrapper>}/>
+        <Route path="/documentation" element={<LoaderWrapper><Documentation /></LoaderWrapper>}/>
+        <Route path="/learn" element={<LoaderWrapper><LearnPage /></LoaderWrapper>}/>
+    
+
+        <Route path="/info" element={<InfoPage />}>
+          <Route path="intro" element={<Intro />}/>
+          <Route path="loops" element={<Loops />}/>
+        </Route>
+
       </Routes>
-    </LoaderWrapper>
     </BrowserRouter>
   </>
   );

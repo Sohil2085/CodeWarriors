@@ -102,6 +102,20 @@ const Navbar_Home = () => {
             >
               About
             </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/learn"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#ffffff',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
+                borderColor: '#0d6efd',
+              })}
+            >
+              Learn
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
 
