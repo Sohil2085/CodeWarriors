@@ -12,6 +12,9 @@ body, #root,.app {
   font-family: 'Share Tech Mono', monospace;
   margin: 0;
   padding: 0;
+  cursor: auto;
+}
+button a {
   cursor: none;
 }
 

@@ -3,7 +3,7 @@ import ProfilePic from '../../assets/profile.png'
 import './ProfilePage.css'
 import { Link } from 'react-router-dom'
 import Navbar_Home from '../../components/Navbar/Navbar_Home'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { Doughnut, Pie } from 'react-chartjs-2'
@@ -11,6 +11,8 @@ import { Chart,ArcElement, Tooltip } from 'chart.js'
 import ChartDataLabels from 'chartjs-plugin-datalabels'
 import questionsData from '../../data/questionsData.json'
 import { color } from 'framer-motion'
+import API from '../../utils/api'
+import useAuthStore from '../../stores/useAuthStore'
 
 
 Chart.register(ArcElement, ChartDataLabels, Tooltip)
@@ -96,6 +98,9 @@ const ProfilePage = () => {
   }
 };
 
+  const {user} = useAuthStore();
+  const [userName, setUser] = useState(null);
+  const [loading , setLoading] = useState(true);
 
   useEffect(() => {
          AOS.init({
@@ -107,6 +112,24 @@ const ProfilePage = () => {
          });
        }, []);
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await API.get('/user/me'); // Token is auto-attached
+        setUser(res.data);
+        console.log(res.name)
+      } catch (err) {
+        console.log('Failed to fetch user:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  if(loading) return <div>Loading ....</div>
+
   return (
     <>
     <Navbar_Home />
@@ -116,12 +139,20 @@ const ProfilePage = () => {
           <div className="col first_col p-5" data-aos="flip-left">
             <div className="name d-flex justify-content-between" data-aos="fade-up">
             <figure className="picture">
-              <img src={ProfilePic} alt="" />
+              <img src={`http://localhost:8080/uploads/${user.image}`} alt="" />
             </figure>
-            <p className='d-flex flex-column'><strong className='fw-bold'>Sohil Kareliya</strong>
-              <span className='text-secondary'><small>sohil_2085</small></span>
-              <span>Rank : 000001</span>
-            </p>
+            <div className='d-flex flex-column'>
+              <strong className='fw-bold'>{userName?.name || 'Username'}</strong>
+              {userName ? (
+                <>
+                  <span><strong>Name:</strong> {userName.name}</span>
+                  <span><strong>Email:</strong> {userName.email}</span>
+                </>
+              ) : (
+                <span>User data could not be loaded.</span>
+              )}
+            </div>
+
             </div>
             <div className="edit_profile pt-1" data-aos="fade-up">
               <button className='btn btn-outline-primary w-100'>Edit Profile</button>

@@ -16,6 +16,7 @@ import LearnPage from "./pages/Learn/LearnPage";
 import InfoPage from "./pages/Info/infoPage";
 import Intro from "./pages/Info/intro";
 import Loops from "./pages/Info/loops";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 
@@ -30,7 +31,7 @@ export default function App() {
 
   return (
     <>
-      <CursorFollower />
+      {/* <CursorFollower /> */}
       <ToastContainer 
       position="top-center"
       autoClose={3000}
@@ -56,6 +57,7 @@ export default function App() {
         <Route path="/dscussionforum" element={<LoaderWrapper><DiscussionForum /></LoaderWrapper>}/>
         <Route path="/documentation" element={<LoaderWrapper><Documentation /></LoaderWrapper>}/>
         <Route path="/learn" element={<LoaderWrapper><LearnPage /></LoaderWrapper>}/>
+        <Route path="/dashboard" element={<LoaderWrapper><Dashboard /></LoaderWrapper>}/>
     
 
         <Route path="/info" element={<InfoPage />}>

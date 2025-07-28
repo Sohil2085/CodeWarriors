@@ -6,6 +6,8 @@ import CodeBackground from '../../components/image/image';
 import "./LoginPage.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import API from "../../utils/api"
+
 
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -53,12 +55,17 @@ const LoginPage = () => {
     }
   }, [isAuthenticated]);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
-      login(username, email, password);
-    } catch (error) {
-      console.log(error)
+      const res = await API.post("/auth/login", { email, password });
+
+      localStorage.setItem("token", res.data.token);
+      login(res.data.user); // Zustand login()
+
+      navigate("/"); // Redirect after login
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Login failed");
     }
   };
 

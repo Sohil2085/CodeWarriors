@@ -13,9 +13,10 @@ import { toast } from 'react-toastify';
 
 const Navbar_Home = () => {
     // const {logout, isAuthenticated} = useAuthStore()
+    const {user} = useAuthStore();
     const logout = useAuthStore((state) => state.logout);
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     // useEffect(() => {
     //   if(!isAuthenticated){
@@ -53,12 +54,12 @@ const Navbar_Home = () => {
   //       }, 2000); // 2-second delay to show the loader
   // };
 
-  const [avatar, setAvatar] = useState('')
+  // const [avatar, setAvatar] = useState('')
 
-  useEffect(() => {
-  const randomSeed = Math.random().toString(36).substring(7);
-  setAvatar(`https://api.dicebear.com/8.x/avataaars/svg?seed=${randomSeed}`);
-  }, []);
+  // useEffect(() => {
+  // const randomSeed = Math.random().toString(36).substring(7);
+  // setAvatar(`https://api.dicebear.com/8.x/avataaars/svg?seed=${randomSeed}`);
+  // }, []);
 
   return (
     <Navbar expand="lg" className="navbar_anm bg-dark sticky-top">
@@ -127,7 +128,7 @@ const Navbar_Home = () => {
             <Dropdown align="end">
               <Dropdown.Toggle variant="dark" id="dropdown-basic" className="profile-toggle border-0 bg-transparent p-0">
                 <img
-                  src={avatar}
+                  src={`http://localhost:8080/uploads/${user.image}`}
                   alt="profile"
                   className="rounded-circle border border-info shadow"
                   width={45}  
@@ -139,6 +140,9 @@ const Navbar_Home = () => {
               <Dropdown.Menu className="dropdown-menu-custom mt-2">
                 <Dropdown.Item as={Link} to="/profile"> Profile</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/problem">Problem</Dropdown.Item>
+                {user.role === 'ADMIN' && (
+                  <Dropdown.Item as={Link} to="/dashboard">Dashboard</Dropdown.Item>
+                )}
                 <Dropdown.Divider />
                 <Dropdown.Item as={Link} to="/login" className="text-danger" onClick={handleLogout}>
                    Logout

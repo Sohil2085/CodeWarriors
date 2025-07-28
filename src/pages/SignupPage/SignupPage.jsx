@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../stores/useAuthStore";
 import { Eye, Mail, User,EyeOff, Lock} from "lucide-react";
 import CodeBackground from '../../components/image/image';
-import "./SignupPage.css";
+import "./SignupPage.css"; 
+import API from "../../utils/api";
 
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -21,11 +22,12 @@ const SignupPage = () => {
          });
        }, []);
 
-  const { user, isAuthenticated, signup } = useAuthStore();
+  const { user, isAuthenticated, login } = useAuthStore();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
 
   console.log("User:", user);
@@ -37,15 +39,37 @@ const SignupPage = () => {
     }
   }, [isAuthenticated, navigate]);
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
     try {
-      e.preventDefault();
-      signup(username, email, password);
-    } catch (error) {
-      console.log(error)
+      const formData = new FormData();
+      formData.append("username", username);
+      formData.append("email", email);
+      formData.append("password", password);
+      if (profileImage) {
+        formData.append("profileImage", profileImage);
+      }
+
+      const res = await API.post("/auth/register", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      localStorage.setItem("token", res.data.token);
+      login(res.data.user); // Zustand
+
+      toast.success("Signup successful!");
+      navigate("/");
+      console.log(username);
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Signup failed");
+      console.error(err); 
     }
   };
 
+  
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100 bg-dark text-light">
       <div className="container p-4 rounded shadow-lg bg-dark d-flex flex-column flex-md-row">
@@ -109,7 +133,27 @@ const SignupPage = () => {
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </span>
+            </div> 
+            <div className="mb-3 mt-3">
+              <label>Profile Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="form-control"
+                onChange={(e) => setProfileImage(e.target.files[0])}
+              />
+              {profileImage && (
+                <div className="mt-2">
+                  <img
+                    src={URL.createObjectURL(profileImage)}
+                    alt="Preview"
+                    className="img-thumbnail"
+                    style={{ maxWidth: '120px', maxHeight: '120px' }}
+                  />
+                </div>
+              )}
             </div>
+
           </div>
             <button type="submit" className="btn btn-primary w-100">
               Sign up

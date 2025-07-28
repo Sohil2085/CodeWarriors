@@ -1,25 +1,33 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProblemById } from '../../utils/api';
 
+const ProblemDescription = () => {
+  const { id } = useParams();
+  const [problem, setProblem] = useState(null);
 
-const ProblemDescription = ({ problem }) => {
+  useEffect(() => {
+    getProblemById(id)
+      .then(setProblem)
+      .catch((err) => console.error("Error fetching problem:", err));
+  }, [id]);
+
   if (!problem) return <p>Loading...</p>;
 
-  let diff;
-  if(problem.difficulty === 'Easy'){
-      diff = <p className="text-success">{problem.difficulty}</p>
-  }
-  else if(problem.difficulty === 'Medium'){
-      diff = <p className="text-warning">{problem.difficulty}</p>
-  }
-  else {
-      diff = <p className="text-danger">{problem.difficulty}</p>
-  }
+  const renderDifficulty = () => {
+    const color = {
+      Easy: 'text-success',
+      Medium: 'text-warning',
+      Hard: 'text-danger',
+    }[problem.difficulty] || 'text-secondary';
 
+    return <p className={`fw-bold ${color}`}>{problem.difficulty}</p>;
+  };
 
   return (
-    
-    <div className="container" data-aos="fade-up">
+    <div className="container mt-4" data-aos="fade-up">
       <h2>{problem.title}</h2>
-      {diff}
+      {renderDifficulty()}
 
       {/* Tags */}
       <div className="mb-3">
@@ -34,7 +42,7 @@ const ProblemDescription = ({ problem }) => {
       {/* Constraints */}
       <h5>Constraints:</h5>
       <ul>
-        {problem.constraints?.map((c, idx) => (
+        {problem.constraints?.split('\n').map((c, idx) => (
           <li key={idx}>{c}</li>
         ))}
       </ul>
@@ -47,6 +55,17 @@ const ProblemDescription = ({ problem }) => {
             <p><strong>Input:</strong> {example.input}</p>
             <p><strong>Output:</strong> {example.output}</p>
             <p><strong>Explanation:</strong> {example.explanation}</p>
+          </div>
+        </div>
+      ))}
+
+      {/* Test Cases */}
+      <h5>Test Cases:</h5>
+      {problem.testCases?.map((test, idx) => (
+        <div key={idx} className="card mb-2">
+          <div className="card-body">
+            <p><strong>Input:</strong> {test.input}</p>
+            <p><strong>Expected Output:</strong> {test.output}</p>
           </div>
         </div>
       ))}
