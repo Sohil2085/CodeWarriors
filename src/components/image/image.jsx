@@ -67,9 +67,9 @@ function reverseList(head) {
   }, [codeSnippets.length])
 
   return (
-    <div className="d-none d-lg-flex flex-column align-items-center justify-content-center bg-dark text-white p-5 position-relative overflow-hidden">
+    <div className="d-none d-lg-flex flex-column align-items-center justify-content-center bg-light text-dark p-5 position-relative overflow-hidden">
       {/* Animated code symbols in background */}
-      <div className="position-absolute top-0 start-0 w-100 h-100 opacity-10" style={{background: '#0f172b'}}>
+      <div className="position-absolute top-0 start-0 w-100 h-100 opacity-10" style={{background: '#f8f9fa'}}>
         <div className="position-absolute" style={{ top: '10%', left: '15%', animation: 'pulse 2s infinite' }}>
           <Braces size={40} />
         </div>
@@ -92,23 +92,23 @@ function reverseList(head) {
 
       <div className="position-relative z-1 w-100 d-flex flex-column align-items-center" style={{ maxWidth: '500px' }}>
         {/* Code editor mockup */}
-        <div className="w-100 bg-secondary rounded shadow mb-4 overflow-hidden">
+        <div className="w-100 bg-light rounded shadow mb-4 overflow-hidden border">
           {/* Editor header */}
-          <div className="bg-dark px-3 py-2 d-flex align-items-center">
+          <div className="bg-light px-3 py-2 d-flex align-items-center border-bottom">
             <div className="d-flex me-3">
               <div className="rounded-circle bg-danger me-1" style={{ width: '12px', height: '12px' }}></div>
               <div className="rounded-circle bg-warning me-1" style={{ width: '12px', height: '12px' }}></div>
               <div className="rounded-circle bg-success" style={{ width: '12px', height: '12px' }}></div>
             </div>
-            <div className="text-muted small font-monospace">problem.js</div>
+            <div className="text-dark small font-monospace">problem.js</div>
           </div>
 
           {/* Code content */}
-          <div className="p-3 font-monospace small position-relative" style={{ height: '16rem', overflow: 'hidden', background: '#1d293d'}}>
-            <pre className="text-success m-0" style={{ whiteSpace: 'pre-wrap' }}>
+          <div className="p-3 font-monospace small position-relative" style={{ height: '16rem', overflow: 'hidden', background: '#f8f9fa'}}>
+            <pre className="text-dark m-0" style={{ whiteSpace: 'pre-wrap' }}>
               {codeSnippets[activeIndex]}
             </pre>
-            <div className="position-absolute bottom-0 end-0 w-1 bg-white" style={{ height: '1rem', animation: 'blink 1s infinite' }}></div>
+            <div className="position-absolute bottom-0 end-0 w-1 bg-dark" style={{ height: '1rem', animation: 'blink 1s infinite' }}></div>
           </div>
         </div>
 
@@ -120,8 +120,8 @@ function reverseList(head) {
         </div>
 
         {/* Text content */}
-        <h2 className="h4 fw-bold mb-2 text-center">{title}</h2>
-        <p className="text-secondary text-center">{subtitle}</p>
+        <h2 className="h4 fw-bold mb-2 text-center text-dark">{title}</h2>
+        <p className="text-dark text-center">{subtitle}</p>
       </div>
     </div>
   )

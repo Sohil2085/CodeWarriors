@@ -71,13 +71,13 @@ const LoginPage = () => {
 
   return (
     <>
-    <div className="home container-fluid text-end p-4" style={{background : '#212529'}}>
+    <div className="home container-fluid text-end p-4" style={{background : '#f8f9fa'}}>
       <div className="container">
         <Link to={'/'} className="me-3 text-decoration-none glow_button">Home</Link>
       </div>
     </div>
-    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-dark text-light">
-      <div className="container p-4 rounded shadow-lg bg-dark d-flex flex-column flex-md-row">
+    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light text-dark">
+      <div className="container p-4 rounded shadow-lg bg-light d-flex flex-column flex-md-row">
         {/* Login Form */}
         <div className="flex-fill p-4" data-aos="fade-up-right">
           <div className="text-center mb-4">

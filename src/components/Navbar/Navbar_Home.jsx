@@ -62,13 +62,13 @@ const Navbar_Home = () => {
   // }, []);
 
   return (
-    <Navbar expand="lg" className="navbar_anm bg-dark sticky-top">
+    <Navbar expand="lg" className="navbar_anm bg-light sticky-top">
       <Container fluid>
         {/* Brand */}
-        <Navbar.Brand as={Link} to={'/'} style={{ color: "#45678a" }}>
-          <span style={{ color: "#ffffff" }}>&lt;</span>
+        <Navbar.Brand as={Link} to={'/'} style={{ color: "#0d6efd" }}>
+          <span style={{ color: "#212529" }}>&lt;</span>
           CodeWarriors/
-          <span style={{ color: "#ffffff" }}>&gt;</span>
+          <span style={{ color: "#212529" }}>&gt;</span>
         </Navbar.Brand>
 
 
@@ -82,9 +82,10 @@ const Navbar_Home = () => {
                 `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
               }
               style={({ isActive }) => ({
-                color: '#ffffff',
+                color: '#0d6efd',
                 backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
                 borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
               })}
             >
               Problems
@@ -96,9 +97,10 @@ const Navbar_Home = () => {
                 `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
               }
               style={({ isActive }) => ({
-                color: '#ffffff',
+                color: '#0d6efd',
                 backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
                 borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
               })}
             >
               About
@@ -110,9 +112,10 @@ const Navbar_Home = () => {
                 `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
               }
               style={({ isActive }) => ({
-                color: '#ffffff',
+                color: '#0d6efd',
                 backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
                 borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
               })}
             >
               Learn
@@ -126,7 +129,7 @@ const Navbar_Home = () => {
         <div className="d-flex">
           {isAuthenticated ? (
             <Dropdown align="end">
-              <Dropdown.Toggle variant="dark" id="dropdown-basic" className="profile-toggle border-0 bg-transparent p-0">
+              <Dropdown.Toggle variant="light" id="dropdown-basic" className="profile-toggle border-0 bg-transparent p-0">
                 <img
                   src={`http://localhost:8080/uploads/${user.image}`}
                   alt="profile"
@@ -160,7 +163,7 @@ const Navbar_Home = () => {
         </div>
 
         {/* Collapse toggle */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className='bg-secondary'/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className='bg-light'/>
         </div>
       </Container>
     </Navbar>

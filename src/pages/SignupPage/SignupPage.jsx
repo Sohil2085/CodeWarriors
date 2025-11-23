@@ -104,8 +104,8 @@ const SignupPage = () => {
 
   
   return (
-    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-dark text-light">
-      <div className="container p-4 rounded shadow-lg bg-dark d-flex flex-column flex-md-row">
+    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light text-dark">
+      <div className="container p-4 rounded shadow-lg bg-light d-flex flex-column flex-md-row">
         {/* Signup Form */}
         <div className="flex-fill p-4" data-aos="fade-right">
           <div className="text-center mb-4">

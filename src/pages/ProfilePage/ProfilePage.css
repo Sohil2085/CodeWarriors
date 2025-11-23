@@ -23,13 +23,14 @@ h1,h2,h3,h4,h5,h6,p,a,ul,li{
   margin: 0;
 }
 .custom_container {
-  /* background-color: #212529; */
+  /* background-color: #ffffff; */
   min-height: 100vh;
-  color: #fff;
+  color: #212529;
 }
 .first_col{
-    background: #292929;
+    background: #f8f9fa;
     border-radius: 10px;
+    border: 1px solid #dee2e6;
 }
 .custom_container .row .first_col .picture img{
     width: 100px;

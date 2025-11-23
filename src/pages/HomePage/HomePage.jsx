@@ -155,7 +155,7 @@ export default function HomePage() {
       </section>
 
       {/* Code Snippet */}
-      <section className="code-snippet container my-4 p-3 bg-dark text-start rounded" data-aos="fade-up-right">
+      <section className="code-snippet container my-4 p-3 bg-light text-start rounded" data-aos="fade-up-right">
         <pre className="prism-code">
           {displayedCode}
         </pre>
@@ -165,15 +165,15 @@ export default function HomePage() {
       <section className="about custom_what container">
         <div className="row">
         <div className="what_content col-lg-6 col-sm-12" data-aos="fade-right">
-        <h2 className="text-primary text-start pb-3"><span style={{ color: "#ffffff" }}>What is</span> CodeWarrior?</h2>
-        <p className="text-white text-start">
+        <h2 className="text-primary text-start pb-3"><span style={{ color: "#212529" }}>What is</span> CodeWarrior?</h2>
+        <p className="text-dark text-start">
           CodeWarrior is a modern coding platform that offers realworld coding challenges, instant feedback, and a community
           for developers to learn, compete, and grow their skills. Whether
           you're preparing for interviews or sharpening your coding
           skills, CodeWarrior provides the tools and environment to
           excel.
         </p>
-        <p className="text-white text-start">
+        <p className="text-dark text-start">
           Whether you're a beginner taking your first steps or a
           seasoned developer aiming to stay sharp, CodeWarrior makes
           practice engaging, competitive, and growth-focused.

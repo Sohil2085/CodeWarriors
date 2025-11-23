@@ -38,7 +38,7 @@ const LearnPage = () => {
                 <div className="col" data-aos = "flip-right">
                 <div className="text-start h-100 custom_col rounded p-4 glass-card">
                     <h2 className="pb-2">JAVASCRIPT</h2>
-                    <p className='text-white'>Ideal for practicing DSA with dynamic typing and built-in data structures like arrays and objects, often used for algorithmic coding in web-based platforms.</p>
+                    <p className='text-dark'>Ideal for practicing DSA with dynamic typing and built-in data structures like arrays and objects, often used for algorithmic coding in web-based platforms.</p>
                     <div className="img text-center">
                         <img src={Javascript} alt="Javascript" height={100} />
                     </div>
@@ -50,7 +50,7 @@ const LearnPage = () => {
                 <div className="col" data-aos = "flip-right">
                 <div className="text-start h-100 custom_col rounded p-4 glass-card">
                     <h2 className="pb-2">JAVA</h2>
-                    <p className='text-white'>Preferred for DSA due to its strict typing, robust standard library (e.g., ArrayList, HashMap), and widespread use in competitive programming.</p>
+                    <p className='text-dark'>Preferred for DSA due to its strict typing, robust standard library (e.g., ArrayList, HashMap), and widespread use in competitive programming.</p>
                     <div className="img text-center">
                         <img src={Java} alt="Java" height={100} />
                     </div>
@@ -64,7 +64,7 @@ const LearnPage = () => {
                 <div className="col" data-aos = "flip-right">
                 <div className="text-start h-100 custom_col rounded p-4 glass-card">
                     <h2 className="pb-2">PYTHON</h2>
-                    <p className='text-white'>Favored for DSA for its concise syntax, extensive libraries (e.g., collections), and ease of implementing complex algorithms quickly.</p>
+                    <p className='text-dark'>Favored for DSA for its concise syntax, extensive libraries (e.g., collections), and ease of implementing complex algorithms quickly.</p>
                     <div className="img text-center">
                         <img src={Python} alt="Python" height={100} />
                     </div>
@@ -76,7 +76,7 @@ const LearnPage = () => {
                 <div className="col" data-aos = "flip-right">
                 <div className="text-start h-100 custom_col rounded p-4 glass-card">
                     <h2 className="pb-2">C++</h2>
-                    <p className='text-white'>A top choice for DSA in competitive programming due to its high performance, STL (e.g., vectors, maps), and fine-grained memory control.</p>
+                    <p className='text-dark'>A top choice for DSA in competitive programming due to its high performance, STL (e.g., vectors, maps), and fine-grained memory control.</p>
                     <div className="img text-center">
                         <img src={CPP} alt="CPP" height={100} />
                     </div>

@@ -2,26 +2,26 @@ a{
     text-decoration: none;
 }
 .dropdown-menu-custom {
-  background: rgba(15, 15, 30, 0.95);
-  border: 1px solid #00fff7;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #0d6efd;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 255, 247, 0.4);
+  box-shadow: 0 0 12px rgba(13, 110, 253, 0.2);
   backdrop-filter: blur(6px);
-  color: white;
+  color: #212529;
   padding: 0.5rem;
 }
 
 .dropdown-menu-custom .dropdown-item {
-  color: #2d4d4b;
+  color: #212529;
   padding: 10px 20px;
   border-radius: 8px;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .dropdown-menu-custom .dropdown-item:hover {
-  background: rgba(10, 112, 112, 0.15);
+  background: rgba(13, 110, 253, 0.1);
   transform: scale(1.05);
-  color: #1f1e1e;
+  color: #0d6efd;
 }
 
 .profile-toggle img {

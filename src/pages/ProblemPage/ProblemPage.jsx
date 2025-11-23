@@ -111,7 +111,7 @@ const ProblemPage = () => {
                 {favorites.includes(q.id) && (
                   <span className="check-icon">✔️</span>
                 )}
-                <Link to={`/problem/${q.id}`} className="text-decoration-none text-white">
+                <Link to={`/problem/${q.id}`} className="text-decoration-none text-dark">
                   {q.id}. {q.title}
                 </Link>
               </div>

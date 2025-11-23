@@ -28,7 +28,7 @@ const centerTextPlugin = {
     const fontSize = (height / 150).toFixed(2);
     ctx.font = `${fontSize}em sans-serif`;
     ctx.textBaseline = "middle";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#212529";
 
     const text = `Total: ${total}`;
     const textX = Math.round((width - ctx.measureText(text).width) / 2);
@@ -60,7 +60,7 @@ const ProfilePage = () => {
       legend: {
         position: "top",
         labels: {
-          color: "#fff",
+          color: "#212529",
           font: {
             size: 14,
           },
@@ -74,10 +74,10 @@ const ProfilePage = () => {
             return `${label}: ${value} solved`;
           },
         },
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
-        titleColor: "#fff",
-        bodyColor: "#fff",
-        borderColor: "#00fff7",
+        backgroundColor: "rgba(255, 255, 255, 0.95)",
+        titleColor: "#212529",
+        bodyColor: "#212529",
+        borderColor: "#0d6efd",
         borderWidth: 1,
       },
     },
@@ -189,7 +189,7 @@ const ProfilePage = () => {
               <div className="row">
                 <div
                   className="d-flex  col p-4 rounded ms-4"
-                  style={{ background: "#292929" }}
+                  style={{ background: "#f8f9fa", border: "1px solid #dee2e6" }}
                 >
                   <div className="" style={{ overflow: "visible" }}>
                     <Doughnut
@@ -202,7 +202,7 @@ const ProfilePage = () => {
                     <ul className="d-flex flex-column gap-2">
                       <li
                         className="rounded pt-1 pb-1 ps-4 pe-4"
-                        style={{ background: "#363636", color: "#1cbaba" }}
+                        style={{ background: "#d4edda", color: "#155724", border: "1px solid #c3e6cb" }}
                         data-aos="fade-up"
                       >
                         Easy<br></br>
@@ -210,7 +210,7 @@ const ProfilePage = () => {
                       </li>
                       <li
                         className="rounded pt-1 pb-1 ps-4 pe-4"
-                        style={{ background: "#363636", color: "#ffb700" }}
+                        style={{ background: "#fff3cd", color: "#856404", border: "1px solid #ffeaa7" }}
                         data-aos="fade-up"
                       >
                         Medium<br></br>
@@ -218,7 +218,7 @@ const ProfilePage = () => {
                       </li>
                       <li
                         className="rounded pt-1 pb-1 ps-4 pe-4"
-                        style={{ background: "#363636", color: "#f53636" }}
+                        style={{ background: "#f8d7da", color: "#721c24", border: "1px solid #f5c6cb" }}
                         data-aos="fade-up"
                       >
                         Hard<br></br>

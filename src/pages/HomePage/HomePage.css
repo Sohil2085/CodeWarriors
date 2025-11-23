@@ -26,11 +26,11 @@ figure, .figure, .picture{
   }
 
 .home-page {
-  color: #fff; /* General text color */
+  color: #212529; /* General text color */
 }
 
 .code-snippet {
-  background: #1e1e1e; /* Darker background for code blocks */
+  background: #f8f9fa; /* Light background for code blocks */
   border-radius: 5px;
   font-family: monospace;
   overflow-x: auto;
@@ -49,21 +49,21 @@ figure, .figure, .picture{
   margin: 0 auto;
 }
 .prism-code{
-  color: #2fb6b6 !important;
+  color: #0d6efd !important;
 }
 .custom_what{
   padding-top: 120px;
 }
 .custom_key{padding-top: 120px;}
 .custom_col{
-  background: #171717;
+  background: #f8f9fa;
   transition: transform 0.3s ease;
 }
 .custom_col:hover {
   transform: scale(1.05); /* Slight zoom-in on hover */
 }
 .custom_col p{
-  color: #46494f;
+  color: #6c757d;
 }
 .what_img .picture{
   padding-top: 69%;
@@ -71,10 +71,10 @@ figure, .figure, .picture{
 .glass-card {
   background: var(--glass);
   backdrop-filter: var(--blur);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(13, 110, 253, 0.1);
 }
 .glow-button {
   border: 2px solid var(--primary);
@@ -88,17 +88,17 @@ figure, .figure, .picture{
 .glow-button:hover {
   box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
   background-color: var(--primary);
-  color: #000;
+  color: #ffffff;
 }
 /* App.css or HomePage.css */
 .glow-background {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #0fffc1, #0d0d0d 80%);
+  background: radial-gradient(circle at center, #e7f3ff, #ffffff 80%);
   z-index: -1;
   animation: glowPulse 6s ease-in-out infinite;
-  opacity: 0.1;
+  opacity: 0.3;
   filter: blur(100px);
 }
 

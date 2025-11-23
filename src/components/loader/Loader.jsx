@@ -3,7 +3,7 @@ import './LoaderWrapper.css'
 const Loader = () => {
   return (
     <div
-      className="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 bg-dark"
+      className="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 bg-light"
       style={{ zIndex: 9999 }}
     >
     <div className="container">
