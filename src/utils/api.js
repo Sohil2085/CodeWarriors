@@ -28,9 +28,10 @@
 
 // export default API;
 import axios from "axios";
+import { API_BASE_URL } from "./url";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + "/api/v1",
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 

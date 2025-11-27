@@ -13,6 +13,7 @@ import questionsData from "../../data/questionsData.json";
 import { color } from "framer-motion";
 import API from "../../utils/api";
 import useAuthStore from "../../stores/useAuthStore";
+import { getAssetUrl } from "../../utils/url";
 
 Chart.register(ArcElement, ChartDataLabels, Tooltip);
 const centerTextPlugin = {
@@ -141,7 +142,7 @@ const ProfilePage = () => {
               >
                 <figure className="picture">
                   <img
-                    src={`http://localhost:8080/uploads/${user.image}`}
+                    src={getAssetUrl(user?.image) || ProfilePic}
                     alt=""
                   />
                 </figure>

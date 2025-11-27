@@ -9,6 +9,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import useAuthStore from '../../stores/useAuthStore';
 import Dropdown  from 'react-bootstrap/Dropdown';
 import { toast } from 'react-toastify';
+import defaultProfile from '../../assets/profile.png';
+import { getAssetUrl } from '../../utils/url';
 
 
 const Navbar_Home = () => {
@@ -131,7 +133,7 @@ const Navbar_Home = () => {
             <Dropdown align="end">
               <Dropdown.Toggle variant="light" id="dropdown-basic" className="profile-toggle border-0 bg-transparent p-0">
                 <img
-                  src={`http://localhost:8080/uploads/${user.image}`}
+                  src={getAssetUrl(user?.image) || defaultProfile}
                   alt="profile"
                   className="rounded-circle border border-info shadow"
                   width={45}  
