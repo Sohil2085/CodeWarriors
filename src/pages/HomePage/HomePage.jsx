@@ -14,7 +14,7 @@ import useAuthStore from "../../stores/useAuthStore";
 
 export default function HomePage() {
 
-  const { isAuthenticated, checkAuth, user, authChecked } = useAuthStore();
+  const { isAuthenticated, user } = useAuthStore();
   // const location = useLocation()
 
   // useEffect(() => {
@@ -26,11 +26,7 @@ export default function HomePage() {
   //   }
   // }, [location.state?.fromLogin]);
 
-  useEffect(() => {
-    if (!authChecked) {
-      checkAuth();
-    }
-  }, [authChecked, checkAuth]);
+
 
   useEffect(() => {
     AOS.init({

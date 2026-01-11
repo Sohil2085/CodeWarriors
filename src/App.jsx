@@ -24,9 +24,22 @@ import VerifyMagicLinkPage from "./pages/VerifyMagicLinkPage/VerifyMagicLinkPage
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
+import Loader from "./components/loader/Loader";
+import { useEffect } from "react";
+import useAuthStore from "./stores/useAuthStore";
 import CursorFollower from "./components/Cursor/CursorFollower";
 
 export default function App() {
+  const { checkAuth, authChecked, isAuthenticated } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  if (!authChecked) {
+    return <Loader />
+  }
 
 
   return (
