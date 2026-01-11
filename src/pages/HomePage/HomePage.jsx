@@ -10,10 +10,11 @@ import Person from "../../assets/coding.jpg"
 // import useAuthStore from "../../stores/useAuthStore";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import useAuthStore from "../../stores/useAuthStore";
 
 export default function HomePage() {
 
-  // const { isAuthenticated, checkAuth, user, logout } = useAuthStore();
+  const { isAuthenticated, checkAuth, user, authChecked } = useAuthStore();
   // const location = useLocation()
 
   // useEffect(() => {
@@ -25,9 +26,11 @@ export default function HomePage() {
   //   }
   // }, [location.state?.fromLogin]);
 
-  // useEffect(() => {
-  //   checkAuth();
-  // }, [checkAuth]);
+  useEffect(() => {
+    if (!authChecked) {
+      checkAuth();
+    }
+  }, [authChecked, checkAuth]);
 
   useEffect(() => {
     AOS.init({

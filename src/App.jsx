@@ -1,5 +1,4 @@
 import React, { Children } from "react";
-import { useEffect } from "react";
 
 import { BrowserRouter, Route, Routes, Navigate, createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage'
@@ -26,18 +25,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import CursorFollower from "./components/Cursor/CursorFollower";
-import useAuthStore from "./stores/useAuthStore";
-
 
 export default function App() {
-
-  const { checkAuth, authChecked } = useAuthStore();
-
-  useEffect(() => {
-    if (!authChecked) {
-      checkAuth();
-    }
-  }, [authChecked]);
 
 
   return (
