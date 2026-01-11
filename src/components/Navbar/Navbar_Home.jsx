@@ -15,9 +15,8 @@ import { getAssetUrl } from '../../utils/url';
 
 const Navbar_Home = () => {
   // const {logout, isAuthenticated} = useAuthStore()
-  const { user } = useAuthStore();
-  const logout = useAuthStore((state) => state.logout);
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const { user, isAuthenticated, authChecked, logout } = useAuthStore();
+
   // const navigate = useNavigate()
 
   // useEffect(() => {
@@ -27,13 +26,10 @@ const Navbar_Home = () => {
   // },[!isAuthenticated])
 
   const handleLogout = async () => {
-    try {
-      await logout()
-    }
-    catch (error) {
-      console.log(error)
-    }
-  }
+    await logout();
+    window.location.href = "/login";
+  };
+
 
   // useEffect(() => {
   //     if (!isAuthenticated) {
@@ -61,6 +57,10 @@ const Navbar_Home = () => {
   // const randomSeed = Math.random().toString(36).substring(7);
   // setAvatar(`https://api.dicebear.com/8.x/avataaars/svg?seed=${randomSeed}`);
   // }, []);
+  if (!authChecked) {
+    return null;
+  }
+
 
   return (
     <Navbar expand="lg" className="navbar_anm bg-light sticky-top">
@@ -148,7 +148,7 @@ const Navbar_Home = () => {
                     <Dropdown.Item as={Link} to="/dashboard">Dashboard</Dropdown.Item>
                   )}
                   <Dropdown.Divider />
-                  <Dropdown.Item as={Link} to="/login" className="text-danger" onClick={handleLogout}>
+                  <Dropdown.Item onClick={handleLogout} className="text-danger">
                     Logout
                   </Dropdown.Item>
                 </Dropdown.Menu>

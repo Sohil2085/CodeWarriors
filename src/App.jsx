@@ -34,8 +34,10 @@ export default function App() {
   const { checkAuth, authChecked, isAuthenticated } = useAuthStore();
 
   useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+    if (!authChecked) {
+      checkAuth();
+    }
+  }, [authChecked, checkAuth]);
 
   if (!authChecked) {
     return <Loader />
