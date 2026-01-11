@@ -5,11 +5,13 @@ import API from "../utils/api";
 const useAuthStore = create((set) => ({
   user: null,
   isAuthenticated: false,
+  authChecked: false, // 🔥 ADD THIS
 
   login: (userData) => {
     set({
       user: userData,
       isAuthenticated: true,
+      authChecked: true,
     });
     toast.success("Login successful!");
   },
@@ -17,8 +19,7 @@ const useAuthStore = create((set) => ({
   logout: async () => {
     try {
       await API.post("/auth/logout");
-      localStorage.removeItem("token");
-      set({ user: null, isAuthenticated: false });
+      set({ user: null, isAuthenticated: false, authChecked: true });
       toast.success("Logged out!");
     } catch (error) {
       console.log("Logout failed", error);
@@ -29,10 +30,19 @@ const useAuthStore = create((set) => ({
   checkAuth: async () => {
     try {
       const res = await API.get("/auth/check");
-      set({ user: res.data.user, isAuthenticated: true });
+      set({
+        user: res.data.user,
+        isAuthenticated: true,
+        authChecked: true,
+      });
     } catch (error) {
-      console.log("Check auth failed:", error);
-      set({ user: null, isAuthenticated: false });
+      // 🔥 IMPORTANT CHANGE
+      // Do NOT force logout on 401
+      set({
+        user: null,
+        isAuthenticated: false,
+        authChecked: true,
+      });
     }
   },
 }));

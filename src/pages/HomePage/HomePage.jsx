@@ -7,13 +7,13 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar_Home"
 import Footer from "../../components/Footer/Footer";
 import Person from "../../assets/coding.jpg"
-import useAuthStore from "../../stores/useAuthStore";
+// import useAuthStore from "../../stores/useAuthStore";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function HomePage() {
 
-  const { isAuthenticated, checkAuth, user, logout } = useAuthStore();
+  // const { isAuthenticated, checkAuth, user, logout } = useAuthStore();
   // const location = useLocation()
 
   // useEffect(() => {
@@ -25,9 +25,9 @@ export default function HomePage() {
   //   }
   // }, [location.state?.fromLogin]);
 
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+  // useEffect(() => {
+  //   checkAuth();
+  // }, [checkAuth]);
 
   useEffect(() => {
     AOS.init({

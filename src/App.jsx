@@ -25,9 +25,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import CursorFollower from "./components/Cursor/CursorFollower";
+import useAuthStore from "./stores/useAuthStore";
 
 
 export default function App() {
+
+  const { checkAuth, authChecked } = useAuthStore();
+
+  useEffect(() => {
+    if (!authChecked) {
+      checkAuth();
+    }
+  }, [authChecked]);
 
 
   return (
