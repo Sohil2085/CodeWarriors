@@ -39,9 +39,6 @@ export default function App() {
     }
   }, [authChecked, checkAuth]);
 
-  if (!authChecked) {
-    return <Loader />
-  }
 
 
   return (
