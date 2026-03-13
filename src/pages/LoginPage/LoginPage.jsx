@@ -88,7 +88,7 @@ const LoginPage = () => {
               <h2 data-aos="fade-up">Welcome Back</h2>
               <p data-aos="fade-up">Sign in to your account</p>
             </div>
-            <form onSubmit={handleLogin}>
+            {/* <form onSubmit={handleLogin}>
 
               <div className="mb-3">
                 <label>Email</label>
@@ -130,7 +130,7 @@ const LoginPage = () => {
               <button type="submit" className="btn btn-primary w-100" >
                 Sign in
               </button>
-            </form>
+            </form> */}
             <div className="mt-3 text-center">
               Don't have an account? <Link to={'/signup'}>Create account</Link>
             </div>

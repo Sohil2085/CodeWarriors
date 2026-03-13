@@ -64,7 +64,7 @@ const SignupPage = () => {
             <p data-aos="fade-up">Sign up with a magic link</p>
           </div>
 
-          {!isSent ? (
+          {/* {!isSent ? (
             <form onSubmit={handleRequestMagicLink}>
               <div className="mb-3">
                 <label>Email</label>
@@ -99,10 +99,10 @@ const SignupPage = () => {
                 Use a different email
               </button>
             </div>
-          )}
+          )} */}
 
           <div className="mt-3 text-center">
-            Don't have an account? <Link to={'/login'}>Sign in</Link>
+            Already have an account? <Link to={'/login'}>Sign in</Link>
           </div>
 
           <div className="text-center mt-3 pb-4">
