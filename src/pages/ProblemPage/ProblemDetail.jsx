@@ -13,6 +13,11 @@ const ProblemDetail = () => {
   const [problem, setProblem] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // States for Code Execution
+  const [code, setCode] = useState("");
+  const [language, setLanguage] = useState("nodejs");
+  const [customInput, setCustomInput] = useState("");
+
   useEffect(() => {
     const fetchProblem = async () => {
       try {
@@ -41,8 +46,18 @@ const ProblemDetail = () => {
             <ProblemDescription problem={problem} /> {/* 👈 use DB problem */}
           </div>
           <div className="col-7 w-1/2 p-4 flex flex-col">
-            <CodeEditor />
-            <TestRunner />
+            <CodeEditor 
+              code={code} 
+              setCode={setCode} 
+              language={language} 
+              setLanguage={setLanguage} 
+            />
+            <TestRunner 
+              code={code}
+              language={language}
+              customInput={customInput}
+              setCustomInput={setCustomInput}
+            />
           </div>
         </div>
       </section>
