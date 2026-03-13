@@ -69,7 +69,7 @@ const TestRunner = ({ code, language, customInput, setCustomInput }) => {
             {result.success ? (
               <>
                 <pre className="mb-2" style={{ whiteSpace: 'pre-wrap', color: 'inherit' }}>{result.output}</pre>
-                <div className="text-muted small border-top pt-2 border-secondary">
+                <div className="small border-top pt-2 border-secondary">
                   <span>Memory: {result.memory} KB</span>
                   <span className="ms-3">Time: {result.cpuTime} s</span>
                 </div>
