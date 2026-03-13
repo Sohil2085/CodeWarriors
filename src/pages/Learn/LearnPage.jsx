@@ -43,7 +43,7 @@ const LearnPage = () => {
                         <img src={Javascript} alt="Javascript" height={100} />
                     </div>
                     <div className="redirect pt-3 pb-3 text-center">
-                        <Link className="p-3 text-decoration-none glow-button" to={'/info/intro'}>Read More</Link>
+                        <Link className="p-3 text-decoration-none glow-button" to={'/info/javascript'}>Read More</Link>
                     </div>
                 </div>
                 </div>
@@ -55,7 +55,7 @@ const LearnPage = () => {
                         <img src={Java} alt="Java" height={100} />
                     </div>
                     <div className="redirect pt-3 pb-3 text-center">
-                        <Link className="p-3 text-decoration-none glow-button" to={'/info/loops'}>Read More</Link>
+                        <Link className="p-3 text-decoration-none glow-button" to={'/info/java'}>Read More</Link>
                     </div>
                 </div>
                 </div>
@@ -69,7 +69,7 @@ const LearnPage = () => {
                         <img src={Python} alt="Python" height={100} />
                     </div>
                     <div className="redirect pt-3 pb-3 text-center">
-                        <Link className="p-3 text-decoration-none glow-button" to={'/info/intro'}>Read More</Link>
+                        <Link className="p-3 text-decoration-none glow-button" to={'/info/python'}>Read More</Link>
                     </div>
                 </div>
                 </div>
@@ -81,7 +81,7 @@ const LearnPage = () => {
                         <img src={CPP} alt="CPP" height={100} />
                     </div>
                     <div className="redirect pt-3 pb-3 text-center">
-                        <Link className="p-3 text-decoration-none glow-button" to={'/info/loops'}>Read More</Link>
+                        <Link className="p-3 text-decoration-none glow-button" to={'/info/cpp'}>Read More</Link>
                     </div>
                 </div>  
                 </div>

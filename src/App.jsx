@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom/client';
 import React, { Children } from "react";
 
 import { BrowserRouter, Route, Routes, Navigate, createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
@@ -16,6 +17,10 @@ import LearnPage from "./pages/Learn/LearnPage";
 import InfoPage from "./pages/Info/infoPage";
 import Intro from "./pages/Info/intro";
 import Loops from "./pages/Info/loops";
+import JavascriptInfo from "./pages/Info/javascript";
+import JavaInfo from "./pages/Info/java";
+import PythonInfo from "./pages/Info/python";
+import CppInfo from "./pages/Info/cpp";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import VerifyMagicLinkPage from "./pages/VerifyMagicLinkPage/VerifyMagicLinkPage";
 
@@ -76,6 +81,10 @@ export default function App() {
           <Route path="/info" element={<InfoPage />}>
             <Route path="intro" element={<Intro />} />
             <Route path="loops" element={<Loops />} />
+            <Route path="javascript" element={<JavascriptInfo />} />
+            <Route path="java" element={<JavaInfo />} />
+            <Route path="python" element={<PythonInfo />} />
+            <Route path="cpp" element={<CppInfo />} />
           </Route>
 
         </Routes>
