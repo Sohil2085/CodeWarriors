@@ -2,26 +2,41 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
+import useLoaderStore from "../../stores/useLoaderStore";
 
 const LoaderWrapper = ({ children }) => {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPageLoading, setIsPageLoading] = useState(false);
+  const { isLoading: isDataLoading } = useLoaderStore();
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsPageLoading(true);
 
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 1800); 
+    const handleLoad = () => setIsPageLoading(false);
 
-    return () => clearTimeout(timeout);
-  }, [location]);
+    if (document.readyState === "complete") {
+      // Just a small 300ms transition for route changes to allow new components to mount
+      // and trigger their own data fetching (e.g., using startLoading())
+      const timeout = setTimeout(() => {
+        setIsPageLoading(false);
+      }, 300);
+      return () => clearTimeout(timeout);
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, [location.pathname]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  const showLoader = isPageLoading || isDataLoading;
 
-  return children;
+  return (
+    <>
+      {showLoader && <Loader />}
+      <div style={{ display: showLoader ? 'none' : 'block' }}>
+        {children}
+      </div>
+    </>
+  );
 };
 
 export default LoaderWrapper;
