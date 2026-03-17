@@ -85,19 +85,26 @@ const ProblemPage = () => {
       </div>
 
       <Form className="mb-4" data-aos="fade-up">
-        <InputGroup>
-          <FormControl
-            placeholder="Search questions"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <Button variant="outline-secondary">
-            <Bookmark /> Bookmarks
-          </Button>
-          <Button variant="outline-secondary">
-            <Book /> Notes
-          </Button>
-        </InputGroup>
+        <div className="row g-2">
+          <div className="col-12 col-md-6 col-lg-8">
+            <FormControl
+              placeholder="Search questions"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="w-100"
+            />
+          </div>
+          <div className="col-6 col-md-3 col-lg-2">
+            <Button variant="outline-secondary" className="w-100 d-flex align-items-center justify-content-center gap-2">
+              <Bookmark size={18} /> <span className="d-none d-sm-inline">Bookmarks</span>
+            </Button>
+          </div>
+          <div className="col-6 col-md-3 col-lg-2">
+            <Button variant="outline-secondary" className="w-100 d-flex align-items-center justify-content-center gap-2">
+              <Book size={18} /> <span className="d-none d-sm-inline">Notes</span>
+            </Button>
+          </div>
+        </div>
       </Form>
 
       <div className="list-group" >

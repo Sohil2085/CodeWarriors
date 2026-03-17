@@ -5,66 +5,66 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="footer footer-expand-lg container-fluid bg-light text-dark">
-    <div className="py-5">
-        <div className="row">
+    <footer className="footer container-fluid bg-light text-dark border-top">
+      <div className="container py-5">
+        <div className="row g-4">
 
-        <div className="col-md-3 mb-4 mb-md-0 text-start">
-            <h5 Brand href="#home" style={{ color: "#0d6efd" }}>
-                <span style={{ color: "#212529" }}>&lt;</span>
-                CodeWarriors/
-                <span style={{ color: "#212529" }}>&gt;</span>
+          <div className="col-lg-3 col-md-6 text-start">
+            <h5 className="mb-3" style={{ color: "#0d6efd" }}>
+              <span style={{ color: "#212529" }}>&lt;</span>
+              CodeWarriors/
+              <span style={{ color: "#212529" }}>&gt;</span>
             </h5>
-            <p className="small">Empowering developers to become coding masters through practice, challenges, and community.</p>
-            <div>
-            <a href="#"><i className="fab fa-github me-2 text-dark"></i></a>
-            <a href="#"><i className="fab fa-twitter me-2 text-dark"></i></a>
-            <a href="#"><i className="fab fa-linkedin text-dark"></i></a>
+            <p className="small text-muted">Empowering developers to become coding masters through practice, challenges, and community.</p>
+            <div className="d-flex gap-3">
+              <a href="#" className="text-dark"><i className="fab fa-github"></i></a>
+              <a href="#" className="text-dark"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="text-dark"><i className="fab fa-linkedin"></i></a>
             </div>
-        </div>
+          </div>
 
-        <div className="col-md-3 mb-4 mb-md-0 text-start">
-            <h6 className="fw-bold">Platform</h6>
+          <div className="col-lg-3 col-md-6 text-start">
+            <h6 className="fw-bold mb-3">Platform</h6>
             <ul className="list-unstyled small">
-            <li><Link to={"/problem"} className="text-dark text-decoration-none">Challenges</Link></li>
-            <li><Link to={"/leaderborad"} className="text-dark text-decoration-none">Leaderboard</Link></li>
-            <li><Link to={"/discussionforum"} className="text-dark text-decoration-none">Discussion Forum</Link></li>
-            <li><Link to={"/documentation"} className="text-dark text-decoration-none">Documentation</Link></li>
+              <li className="mb-2"><Link to={"/problem"} className="text-dark text-decoration-none opacity-75">Challenges</Link></li>
+              <li className="mb-2"><Link to={"/leaderborad"} className="text-dark text-decoration-none opacity-75">Leaderboard</Link></li>
+              <li className="mb-2"><Link to={"/discussionforum"} className="text-dark text-decoration-none opacity-75">Discussion Forum</Link></li>
+              <li className="mb-2"><Link to={"/documentation"} className="text-dark text-decoration-none opacity-75">Documentation</Link></li>
             </ul>
-        </div>
+          </div>
 
-        <div className="col-md-3 mb-4 mb-md-0 text-start">
-            <h6 className="fw-bold">Resources</h6>
+          <div className="col-lg-3 col-md-6 text-start">
+            <h6 className="fw-bold mb-3">Resources</h6>
             <ul className="list-unstyled small">
-            <li><Link href="#" className="text-dark text-decoration-none">Blog</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">Tutorials</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">API</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">FAQ</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">Blog</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">Tutorials</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">API</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">FAQ</Link></li>
             </ul>
-        </div>
+          </div>
 
-        <div className="col-md-3 mb-4 mb-md-0 text-start">
-            <h6 className="fw-bold">Company</h6>
+          <div className="col-lg-3 col-md-6 text-start">
+            <h6 className="fw-bold mb-3">Company</h6>
             <ul className="list-unstyled small">
-            <li><Link href="#" className="text-dark text-decoration-none">About</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">Careers</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">Contact</Link></li>
-            <li><Link href="#" className="text-dark text-decoration-none">Legal</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">About</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">Careers</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">Contact</Link></li>
+              <li className="mb-2"><Link to="#" className="text-dark text-decoration-none opacity-75">Legal</Link></li>
             </ul>
-        </div>
+          </div>
         </div>
 
-        <hr className="border-secondary my-4" />
+        <hr className="my-4" />
 
-        <div className="d-flex flex-column flex-md-row justify-content-between small">
-        <div>© 2025 Code Warriors. All rights reserved.</div>
-        <div>
-            <Link href="#" className="text-dark text-decoration-none me-3">Privacy Policy</Link>
-            <Link href="#" className="text-dark text-decoration-none me-3">Terms of Service</Link>
-            <Link href="#" className="text-dark text-decoration-none">Cookie Policy</Link>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+          <div>© 2025 Code Warriors. All rights reserved.</div>
+          <div className="d-flex gap-3">
+            <Link to="#" className="text-dark text-decoration-none opacity-75">Privacy Policy</Link>
+            <Link to="#" className="text-dark text-decoration-none opacity-75">Terms of Service</Link>
+            <Link to="#" className="text-dark text-decoration-none opacity-75">Cookie Policy</Link>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
     </footer>
 
   )

@@ -55,8 +55,14 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light text-dark">
-      <div className="container p-4 rounded shadow-lg bg-light d-flex flex-column flex-md-row">
+    <>
+      <div className="home container-fluid text-end p-4" style={{ background: '#f8f9fa' }}>
+        <div className="container">
+          <Link to={'/'} className="me-3 text-decoration-none glow_button">Home</Link>
+        </div>
+      </div>
+      <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light text-dark">
+        <div className="container p-4 rounded shadow-lg bg-light d-flex flex-column flex-md-row">
         {/* Signup Form */}
         <div className="flex-fill p-4" data-aos="fade-right">
           <div className="text-center mb-4">
@@ -134,6 +140,7 @@ const SignupPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

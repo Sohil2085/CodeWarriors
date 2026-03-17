@@ -73,60 +73,8 @@ const Navbar_Home = () => {
         </Navbar.Brand>
 
 
-        {/* Collapsible nav links */}
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link
-              as={NavLink}
-              to="/problem"
-              className={({ isActive }) =>
-                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
-              }
-              style={({ isActive }) => ({
-                color: '#0d6efd',
-                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
-                borderColor: '#0d6efd',
-                ...(isActive && { color: '#ffffff' }),
-              })}
-            >
-              Problems
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="/about"
-              className={({ isActive }) =>
-                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
-              }
-              style={({ isActive }) => ({
-                color: '#0d6efd',
-                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
-                borderColor: '#0d6efd',
-                ...(isActive && { color: '#ffffff' }),
-              })}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="/learn"
-              className={({ isActive }) =>
-                `btn btn-outline-primary text-decoration-none ms-auto ${isActive ? 'active' : ''}`
-              }
-              style={({ isActive }) => ({
-                color: '#0d6efd',
-                backgroundColor: isActive ? '#0d6efd' : 'transparent', // Active: blue background
-                borderColor: '#0d6efd',
-                ...(isActive && { color: '#ffffff' }),
-              })}
-            >
-              Learn
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
-        <div className="d-flex gap-4">
+        <div className="d-flex align-items-center gap-2 gap-md-4 order-lg-3">
           {/* Sign in always on right */}
-          {/* <img src="../../assets/streak.svg" alt="" /> */}
           <div className="d-flex">
             {isAuthenticated ? (
               <Dropdown align="end">
@@ -135,8 +83,8 @@ const Navbar_Home = () => {
                     src={getAssetUrl(user?.image) || defaultProfile}
                     alt="profile"
                     className="rounded-circle border border-info shadow"
-                    width={45}
-                    height={45}
+                    width={40}
+                    height={40}
                     style={{ objectFit: 'cover' }}
                   />
                 </Dropdown.Toggle>
@@ -156,7 +104,7 @@ const Navbar_Home = () => {
             ) : (
               <Link
                 to="/login"
-                className="btn btn-outline-primary text-decoration-none ms-auto"
+                className="btn btn-outline-primary btn-sm btn-md-base text-decoration-none"
               >
                 Sign in
               </Link>
@@ -166,6 +114,57 @@ const Navbar_Home = () => {
           {/* Collapse toggle */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" className='bg-light' />
         </div>
+
+        {/* Collapsible nav links */}
+        <Navbar.Collapse id="basic-navbar-nav" className="order-lg-2">
+          <Nav className="me-auto mt-3 mt-lg-0">
+            <Nav.Link
+              as={NavLink}
+              to="/problem"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none mb-2 mb-lg-0 ms-lg-2 ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#0d6efd',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent', 
+                borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
+              })}
+            >
+              Problems
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/about"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none mb-2 mb-lg-0 ms-lg-2 ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#0d6efd',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent',
+                borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
+              })}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/learn"
+              className={({ isActive }) =>
+                `btn btn-outline-primary text-decoration-none mb-2 mb-lg-0 ms-lg-2 ${isActive ? 'active' : ''}`
+              }
+              style={({ isActive }) => ({
+                color: '#0d6efd',
+                backgroundColor: isActive ? '#0d6efd' : 'transparent',
+                borderColor: '#0d6efd',
+                ...(isActive && { color: '#ffffff' }),
+              })}
+            >
+              Learn
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
 

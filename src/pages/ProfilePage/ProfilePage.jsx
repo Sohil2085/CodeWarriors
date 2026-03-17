@@ -134,8 +134,9 @@ const ProfilePage = () => {
       <Navbar_Home />
       <section className="custom_container pt-5">
         <div className="container">
-          <div className="row gx-4">
-            <div className="col first_col p-5" data-aos="flip-left">
+          <div className="row gy-4 gx-lg-5">
+            <div className="col-12 col-lg-4 order-2 order-lg-1" data-aos="flip-left">
+              <div className="first_col p-4 p-md-5 h-100">
               <div
                 className="name d-flex justify-content-between"
                 data-aos="fade-up" style={{ flexDirection: "column" }}
@@ -184,51 +185,57 @@ const ProfilePage = () => {
                 <button className="btn btn-outline-secondary me-2 mt-2">
                   C++
                 </button>
-              </div>
             </div>
-            <div className="col-8 ">
-              <div className="row">
+            </div>
+          </div>
+          <div className="col-12 col-lg-8 order-1 order-lg-2">
+              <div className="row gy-4">
                 <div
-                  className="d-flex  col p-4 rounded ms-4"
+                  className="d-flex flex-column flex-md-row align-items-center justify-content-center col p-4 rounded ms-lg-4 shadow-sm"
                   style={{ background: "#f8f9fa", border: "1px solid #dee2e6" }}
                 >
-                  <div className="" style={{ overflow: "visible" }}>
+                  <div className="mb-4 mb-md-0 d-flex justify-content-center" style={{ width: '100%', maxWidth: '300px', height: '300px' }}>
                     <Doughnut
                       data={chartData}
                       options={options}
                       plugins={[ChartDataLabels, centerTextPlugin]}
                     />
                   </div>
-                  <div className="info">
-                    <ul className="d-flex flex-column gap-2">
+                  <div className="info w-100 ms-md-4">
+                    <ul className="d-flex flex-column gap-3 mb-0 p-0" style={{ listStyle: 'none' }}>
                       <li
-                        className="rounded pt-1 pb-1 ps-4 pe-4"
+                        className="rounded p-3"
                         style={{ background: "#d4edda", color: "#155724", border: "1px solid #c3e6cb" }}
                         data-aos="fade-up"
                       >
-                        Easy<br></br>
-                        <small>50/880</small>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <strong>Easy</strong>
+                          <span>50/880</span>
+                        </div>
                       </li>
                       <li
-                        className="rounded pt-1 pb-1 ps-4 pe-4"
+                        className="rounded p-3"
                         style={{ background: "#fff3cd", color: "#856404", border: "1px solid #ffeaa7" }}
                         data-aos="fade-up"
                       >
-                        Medium<br></br>
-                        <small>75/1858</small>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <strong>Medium</strong>
+                          <span>75/1858</span>
+                        </div>
                       </li>
                       <li
-                        className="rounded pt-1 pb-1 ps-4 pe-4"
+                        className="rounded p-3"
                         style={{ background: "#f8d7da", color: "#721c24", border: "1px solid #f5c6cb" }}
                         data-aos="fade-up"
                       >
-                        Hard<br></br>
-                        <small>25/842</small>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <strong>Hard</strong>
+                          <span>25/842</span>
+                        </div>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col"></div>
               </div>
             </div>
           </div>

@@ -41,23 +41,31 @@ const ProblemDetail = () => {
     <>
       <Navbar />
       <section className="custom_container">
-        <div className="row h-screen">
-          <div className="col-5 w-1/2 p-5 overflow-y-auto border-r custom_first">
-            <ProblemDescription problem={problem} /> {/* 👈 use DB problem */}
-          </div>
-          <div className="col-7 w-1/2 p-4 flex flex-col">
-            <CodeEditor 
-              code={code} 
-              setCode={setCode} 
-              language={language} 
-              setLanguage={setLanguage} 
-            />
-            <TestRunner 
-              code={code}
-              language={language}
-              customInput={customInput}
-              setCustomInput={setCustomInput}
-            />
+        <div className="container-fluid">
+          <div className="row">
+            {/* Problem Description - Scrollable independently if needed */}
+            <div className="col-12 col-xl-5 p-3 p-md-4 border-end border-xl-end custom_first overflow-y-auto" style={{ maxHeight: 'calc(100vh - 70px)' }}>
+              <ProblemDescription problem={problem} />
+            </div>
+            {/* Code Editor & Test Runner */}
+            <div className="col-12 col-xl-7 p-3 p-md-4 d-flex flex-column" style={{ minHeight: '500px' }}>
+              <div className="flex-grow-1">
+                <CodeEditor 
+                  code={code} 
+                  setCode={setCode} 
+                  language={language} 
+                  setLanguage={setLanguage} 
+                />
+              </div>
+              <div className="mt-4">
+                <TestRunner 
+                  code={code}
+                  language={language}
+                  customInput={customInput}
+                  setCustomInput={setCustomInput}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
